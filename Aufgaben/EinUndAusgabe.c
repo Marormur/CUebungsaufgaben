@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "EinUndAusgabe.h"
+#include <math.h>
 #include "../AllgemeineFunktionen.h"
 
 // Aufgabe 1
@@ -40,13 +40,13 @@ void halloWeltAufgabe() {
     printf("Das Ergebnis der Addition lautet      : %d\n", zahl1 + zahl2);
     printf("Das Ergebnis der Subtraktion lautet   : %d\n", zahl1 - zahl2);
     printf("Das Ergebnis der Multiplikation lautet: %d\n", zahl1 * zahl2);
-    printf("Das Ergebnis der Division lautet      : %f\n\n", (float)zahl1 / zahl2);
+    printf("Das Ergebnis der Division lautet      : %f\n\n", (float) zahl1 / (float) zahl2);
 
     puts("Schöner sind die Ausgaben so:");
     printf("Das Ergebnis von 100 + 120 = %d\n", zahl2 + zahl1);
     printf("Das Ergebnis von 120 - 100 = %d\n", zahl1 - zahl2);
     printf("Das Ergebnis von 100 * 120 = %d\n", zahl2 * zahl1);
-    printf("Das Ergebnis von 120 / 100 = %f\n\n", (float)zahl1 / zahl2);
+    printf("Das Ergebnis von 120 / 100 = %f\n\n", (float) zahl1 / (float) zahl2);
     pressAnyKeyMessage();
 }
 
@@ -55,29 +55,14 @@ void spareinlageAufgabe() {
     clearScreen();
 
     // Bei Geld nimmt man immer lieber mal einen double
-    double startkapital, zinssatz;
     printf("Bitte geben Sie ihr Startkapital ein: ");
-    int eingabeResult = scanf(" %lf\n", &startkapital);
-    if (eingabeResult == EOF || eingabeResult == 0) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fgetc(stdin);
-        return;
-    }
+    double startkapital = strtod(getString(256), NULL);
 
     printf("Bitte geben Sie den Zinssatz an     : ");
-    eingabeResult = scanf("%lf", &zinssatz);
-    if (eingabeResult == EOF || eingabeResult == 0) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fflush(stdin);
-        fgetc(stdin);
-        return;
-    }
+    double zinssatz = strtod(getString(256), NULL);
 
     // Mit ".2" vor dem "lf" kann man in einem formatierten String die Nachkommastellen eines doubles (oder auch float) auf 2 Stellen begrenzen
     printf("\nDas Endkapital nach 3 Jahren beläuft sich auf %.2lf\n\n", startkapital * pow(1 + zinssatz / 100, 3));
-
     pressAnyKeyMessage();
 }
 
@@ -96,98 +81,35 @@ void herstellungskostenAufgabe() {
     clearScreen();
     puts("Gewinnberechnung Version 1.0");
     printf("\nBitte geben Sie die fixen Kosten ein: ");
-    long fixKosten;
-    char fixKostenInput[256];
-    fflush(stdin);
-    if (fgets(fixKostenInput, sizeof(fixKostenInput), stdin) == NULL) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fflush(stdin);
-        fgetc(stdin);
-        return;
-    }
-
-    fixKosten = strtol(fixKostenInput, NULL, 10);
+    long fixKosten = strtol(getString(256), NULL, 10);
     printf("\nBitte geben Sie die Kosten fuer ein Produkt ein: ");
-    long produktKosten;
-    char produktKostenInput[256];
-    fflush(stdin);
-    if (fgets(produktKostenInput, sizeof(produktKostenInput), stdin) == NULL) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fflush(stdin);
-        fgetc(stdin);
-        return;
-    }
-
-    produktKosten = strtol(produktKostenInput, NULL, 10);
+    long produktKosten = strtol(getString(256), NULL, 10);
     printf("\nBitte geben Sie den Erloes fuer ein Produkt ein: ");
-    long produktErloes;
-    char produktErloesInput[256];
-    fflush(stdin);
-    if (fgets(produktErloesInput, sizeof(produktErloesInput), stdin) == NULL) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fflush(stdin);
-        fgetc(stdin);
-        return;
-    }
-
-    produktErloes = strtol(produktErloesInput, NULL, 10);
+    long produktErloes = strtol(getString(256), NULL, 10);
     printf("\nWie viele Produkte sollen hergestellt werden:\t");
-    long anzahlProdukte;
-    char anzahlProdukteInput[256];
-    fflush(stdin);
-    if (fgets(anzahlProdukteInput, sizeof(anzahlProdukteInput), stdin) == NULL) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fflush(stdin);
-        fgetc(stdin);
-        return;
-    }
-
-    anzahlProdukte = strtol(anzahlProdukteInput, NULL, 10);
-
+    long anzahlProdukte = strtol(getString(256), NULL, 10);
     long produktionsKosten = produktKosten * anzahlProdukte;
     long gesamtErloes = produktErloes * anzahlProdukte;
     long gewinn = gesamtErloes - (produktionsKosten + fixKosten);
-    printf("\n\nDer Gewinn betraegt: %d Euro\n\n", gewinn);
+    printf("\n\nDer Gewinn betraegt: %ld Euro\n\n", gewinn);
     pressAnyKeyMessage();
 }
 
 // Aufgabe 5
 void lineareGleichung() {
     puts("Lineare Gleichung Version 1.0");
+
+    // Wert A abfragen
     printf("\nBitte den Wert für a eingeben: ");
-    long wertA;
-    char wertAInput[256];
-    fflush(stdin);
-    if (fgets(wertAInput, sizeof(wertAInput), stdin) == NULL) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fflush(stdin);
-        fgetc(stdin);
-        return;
-    }
+    long wertA = strtol(getString(256), NULL, 10);
 
-    wertA = strtol(wertAInput, NULL, 10);
+    // Wert B abfragen
     printf("\nBitte den Wert für b eingeben: ");
-    long wertB;
-    char wertBInput[256];
-    fflush(stdin);
-    if (fgets(wertBInput, sizeof(wertBInput), stdin) == NULL) {
-        puts("Fehler mit der Eingabe!");
-        puts("Drücke eine beliebige Taste zum Fortfahren...");
-        fflush(stdin);
-        fgetc(stdin);
-        return;
-    }
+    long wertB = strtol(getString(256), NULL, 10);
 
-    wertB = strtol(wertBInput, NULL, 10);
-
+    // Nach der Gleichung "ax + b = 0" den Wert für x ausrechnen
     long ergebnis = (0 - wertB) / wertA;
-
-    printf("\n\nDie Loesung lautet: %d\n\n", ergebnis);
+    printf("\n\nDie Loesung lautet: %ld\n\n", ergebnis);
     pressAnyKeyMessage();
 }
 
@@ -202,29 +124,28 @@ void einUndAusgabeMenue() {
         puts("5: lineare Gleichung");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
-        int input;
-        int inputResult = scanf(" %d", &input);
-        if (inputResult != EOF && inputResult != 0) {
-            switch (input) {
-                case 0:
-                    return;
-                case 1:
-                    halloWeltAufgabe();
-                    break;
-                case 2:
-                    spareinlageAufgabe();
-                    break;
-                case 3:
-                    abbaAufgabe();
-                    break;
-                case 4:
-                    herstellungskostenAufgabe();
-                    break;
-                case 5:
-                    lineareGleichung();
-                    break;
-            }
+        long input = strtol(getString(2), NULL, 10);
+        switch (input) {
+            case 0:
+                return;
+            case 1:
+                halloWeltAufgabe();
+                break;
+            case 2:
+                spareinlageAufgabe();
+                break;
+            case 3:
+                abbaAufgabe();
+                break;
+            case 4:
+                herstellungskostenAufgabe();
+                break;
+            case 5:
+                lineareGleichung();
+                break;
+            default:
+                // Nur zur Unterdrückung einer Warnung
+                break;
         }
-
     }
 }

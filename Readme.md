@@ -1,6 +1,8 @@
 # C Übungsaufgaben
 Dies ist ein Programm, welches Lösungen für die Übungsaufgaben von Herrn Mark beinhaltet.
 
+Dieses Projekt ist konzipiert, mit dem C99 Standard kompatibel zu sein.
+
 ## Fortschritt
 - [x] **Ein- und Ausgabebefehle**
     - [x] Aufgabe 1

@@ -4,6 +4,7 @@
 
 // Die einzelnen Übungsblätter sind zur Ordnung in andere Dateien ausgelagert
 #include "Aufgaben/EinUndAusgabe.h"
+#include "Aufgaben/Alternativen.h"
 
 int main() {
     int exitProgram = 0;
@@ -11,6 +12,7 @@ int main() {
         clearScreen();
         puts("==== Lösungen zu den C Übungsaufgaben ====");
         puts("1: Ein- und Ausgabe");
+        puts("2: Alternativen");
 
         puts("0: Programm beenden");
 
@@ -19,7 +21,7 @@ int main() {
         if (fgets(eingabeString, 256, stdin) == NULL) {
 
             // Leere den Inputstream, damit das fgetc nicht übersprungen wird
-            fflush(stdin);
+            fflush(stdin); // Das ist nicht wirklich dokumentiertes Verhalten, funktioniert für meine Zwecke aber trotzden
             puts("Drücke eine beliebige Taste zum Fortfahren...");
 
             // Hier lese ich so anstatt mit "scanf" aus, damit per Druck auf "Enter" ein "\n" angenommen werden kann
@@ -38,6 +40,13 @@ int main() {
                 break;
             case 1:
                 einUndAusgabeMenue();
+                break;
+            case 2:
+                alternativenMenue();
+                break;
+            default:
+                // Unbehandelt, da man im Menü bleiben soll
+                // Dieser Fall dient nur zur Unterdrückung einer Warnung
                 break;
         }
 

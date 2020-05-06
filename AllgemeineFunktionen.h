@@ -9,4 +9,6 @@ void clearScreen();
 
 void pressAnyKeyMessage();
 
+char* getString(int length);
+
 #endif //CUEBUNGSAUFGABEN_ALLGEMEINEFUNKTIONEN_H
