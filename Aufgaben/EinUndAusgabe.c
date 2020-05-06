@@ -157,7 +157,38 @@ void herstellungskostenAufgabe() {
 
 // Aufgabe 5
 void lineareGleichung() {
+    puts("Lineare Gleichung Version 1.0");
+    printf("\nBitte den Wert für a eingeben: ");
+    long wertA;
+    char wertAInput[256];
+    fflush(stdin);
+    if (fgets(wertAInput, sizeof(wertAInput), stdin) == NULL) {
+        puts("Fehler mit der Eingabe!");
+        puts("Drücke eine beliebige Taste zum Fortfahren...");
+        fflush(stdin);
+        fgetc(stdin);
+        return;
+    }
 
+    wertA = strtol(wertAInput, NULL, 10);
+    printf("\nBitte den Wert für b eingeben: ");
+    long wertB;
+    char wertBInput[256];
+    fflush(stdin);
+    if (fgets(wertBInput, sizeof(wertBInput), stdin) == NULL) {
+        puts("Fehler mit der Eingabe!");
+        puts("Drücke eine beliebige Taste zum Fortfahren...");
+        fflush(stdin);
+        fgetc(stdin);
+        return;
+    }
+
+    wertB = strtol(wertBInput, NULL, 10);
+
+    long ergebnis = (0 - wertB) / wertA;
+
+    printf("\n\nDie Loesung lautet: %d\n\n", ergebnis);
+    pressAnyKeyMessage();
 }
 
 void einUndAusgabeMenue() {
