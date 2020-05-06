@@ -1,0 +1,10 @@
+//
+// Created by Marvin Temmen on 26.03.20.
+//
+
+#ifndef CUEBUNGSAUFGABEN_EINUNDAUSGABE_H
+#define CUEBUNGSAUFGABEN_EINUNDAUSGABE_H
+
+void einUndAusgabeMenue();
+
+#endif //CUEBUNGSAUFGABEN_EINUNDAUSGABE_H

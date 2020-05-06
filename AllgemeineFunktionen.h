@@ -1,0 +1,12 @@
+//
+// Created by Marvin Temmen on 26.03.20.
+//
+
+#ifndef CUEBUNGSAUFGABEN_ALLGEMEINEFUNKTIONEN_H
+#define CUEBUNGSAUFGABEN_ALLGEMEINEFUNKTIONEN_H
+
+void clearScreen();
+
+void pressAnyKeyMessage();
+
+#endif //CUEBUNGSAUFGABEN_ALLGEMEINEFUNKTIONEN_H
