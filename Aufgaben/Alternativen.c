@@ -5,11 +5,12 @@
 #include "../AllgemeineFunktionen.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 void begruessung() {
     clearScreen();
     printf("Bitte geben Sie Ihren Nachnamen ein: ");
-    char* nachname = getString(256);
+    char *nachname = getString(256);
     printf("Bitte geben Sie Ihr Geschlecht (m/w) ein: ");
 
     // Hier muss ich 2 Zeichen abfragen, da sonst "\n" genommen wird
@@ -30,6 +31,9 @@ void begruessung() {
             puts("Ungültiges Geschlecht!");
             return;
     }
+
+    free(nachname);
+    pressAnyKeyMessage();
 }
 
 void alternativenMenue() {

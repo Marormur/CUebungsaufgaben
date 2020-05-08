@@ -20,7 +20,7 @@ void pressAnyKeyMessage() {
 }
 
 char*  getString(int length){
-    char input[length];
+    char *input = malloc(length);
     fflush(stdin);
     if (fgets(input, length, stdin) == NULL) {
         puts("Fehler mit der Eingabe!");
