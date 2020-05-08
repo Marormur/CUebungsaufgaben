@@ -36,11 +36,43 @@ void begruessung() {
     pressAnyKeyMessage();
 }
 
+void notenLookup() {
+    clearScreen();
+    printf("Geben Sie eine Note (1-6) ein: ");
+    long note = strtol(getString(2), NULL , 10);
+    switch (note) {
+        case 1:
+            printf("\nSehr gut\n\n");
+            break;
+        case 2:
+            printf("\nGut\n\n");
+            break;
+        case 3:
+            printf("\nBefriedigend\n\n");
+            break;
+        case 4:
+            printf("\nAusreichend\n\n");
+            break;
+        case 5:
+            printf("\nMangelhaft\n\n");
+            break;
+        case 6:
+            printf("\nUngenügend\n\n");
+            break;
+        default:
+            printf("\nDie Eingabe stellt keine Note dar!\n\n");
+            break;
+    }
+
+    pressAnyKeyMessage();
+}
+
 void alternativenMenue() {
     while (1) {
         clearScreen();
         puts("Aufgaben zu Alternativen:");
         puts("1: Begrüßung");
+        puts("2: Schulnoten");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         long input = strtol(getString(2), NULL, 10);
@@ -49,6 +81,9 @@ void alternativenMenue() {
                 return;
             case 1:
                 begruessung();
+                break;
+            case 2:
+                notenLookup();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung
