@@ -11,11 +11,11 @@ Dieses Projekt ist konzipiert, mit dem C99 Standard kompatibel zu sein.
     - [x] Aufgabe 4
     - [x] Aufgabe 5
 - [ ] **Alternativen**
-    - [ ] Aufgabe 1
-    - [ ] Aufgabe 2
-    - [ ] Aufgabe 3
+    - [x] Aufgabe 1
+    - [x] Aufgabe 2
+    - [x] Aufgabe 3
     - [ ] Aufgabe 4
-    - [ ] Aufgabe 5
+    - [x] Aufgabe 5
 - [ ] **Schleifen**
     - [ ] Aufgabe 1
     - [ ] Aufgabe 2

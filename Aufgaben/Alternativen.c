@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 // Aufgabe 1
 void begruessung() {
@@ -20,7 +21,6 @@ void begruessung() {
         geschlecht -= 32; // Dann soll daraus ein großer gemacht werden
     }
 
-    // TODO nachname ist immer NULL
     switch (geschlecht) {
         case 'M':
             printf("\nGuten Tag, Herr %s\n", nachname);
@@ -107,6 +107,79 @@ void menue() {
     pressAnyKeyMessage();
 }
 
+void dreiZahlen() {
+    clearScreen();
+    int zahl1, zahl2, zahl3;
+    printf("1. Zahl: ");
+    zahl1 = (int)strtol(getString(2), NULL, 10);
+    printf("\n2. Zahl: ");
+    zahl2 = (int)strtol(getString(2), NULL, 10);
+    printf("\n3. Zahl: ");
+    zahl3 = (int)strtol(getString(2), NULL, 10);
+    int groessteZahl = zahl1, kleinsteZahl = zahl2;
+
+    // TODO
+
+
+    printf("\n\nKleinste Zahl: %d", kleinsteZahl);
+    printf("\nGroesste Zahl: %d\n", groessteZahl);
+    pressAnyKeyMessage();
+}
+
+void datum() {
+    clearScreen();
+    int jahr,monat,tag;
+    printf("Bitte geben Sie das Jahr ein : ");
+    jahr = (int)strtol(getString(5), NULL, 10);
+    printf("\nBitte geben Sie den Monat ein: ");
+    monat = (int)strtol(getString(3), NULL, 10);
+    printf("\nBitte geben Sie den Tag ein  :");
+    tag = (int)strtol(getString(3), NULL, 10);
+    int gueltigesDatum = 1;
+    time_t zeit;
+    time(&zeit);
+    struct tm *info;
+    info = localtime(&zeit);
+    if (jahr > (info->tm_year)+1900){
+        gueltigesDatum = 0;
+    }
+
+    if (monat > 12 || monat < 1) {
+        gueltigesDatum = 0;
+    }
+
+    if (tag < 1 || tag > 31) {
+        gueltigesDatum = 0;
+    }
+
+    if (monat == 2){
+        if (tag > 29) {
+            gueltigesDatum = 0;
+        }
+
+        int schaltjahr = 0;
+        if (jahr % 4 == 0 && jahr % 100 != 0) {
+            schaltjahr = 1;
+        } else if (jahr % 4 == 0 &&
+                    jahr % 100 == 0 &&
+                    jahr % 400 == 0){
+            schaltjahr = 1;
+        }
+
+        if (!schaltjahr && tag > 28) {
+            gueltigesDatum = 0;
+        }
+    }
+
+    char korrektChar = 0;
+    if (!gueltigesDatum){
+        korrektChar = 'k';
+    }
+
+    printf("\n\n%d.%d.%d ist %cein korrektes Datum\n\n", tag, monat, jahr, korrektChar);
+    pressAnyKeyMessage();
+}
+
 void alternativenMenue() {
     while (1) {
         clearScreen();
@@ -114,9 +187,11 @@ void alternativenMenue() {
         puts("1: Begrüßung");
         puts("2: Schulnoten");
         puts("3: Menü");
+        puts("4: Drei Zahlen");
+        puts("5: Datum");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
-        long input = strtol(getString(2), NULL, 10);
+        int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {
             case 0:
                 return;
@@ -128,6 +203,12 @@ void alternativenMenue() {
                 break;
             case 3:
                 menue();
+                break;
+            case 4:
+                dreiZahlen();
+                break;
+            case 5:
+                datum();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung
