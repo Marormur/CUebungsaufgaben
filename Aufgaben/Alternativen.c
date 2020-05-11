@@ -171,7 +171,7 @@ void datum() {
         }
     }
 
-    char korrektChar = 0;
+    char korrektChar = 127;
     if (!gueltigesDatum){
         korrektChar = 'k';
     }

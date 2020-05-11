@@ -17,7 +17,7 @@ Dieses Projekt ist konzipiert, mit dem C99 Standard kompatibel zu sein.
     - [ ] Aufgabe 4
     - [x] Aufgabe 5
 - [ ] **Schleifen**
-    - [ ] Aufgabe 1
+    - [x] Aufgabe 1
     - [ ] Aufgabe 2
     - [ ] Aufgabe 3
     - [ ] Aufgabe 4
