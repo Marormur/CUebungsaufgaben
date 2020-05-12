@@ -168,6 +168,22 @@ void kleinesEinsMalEins() {
     pressAnyKeyMessage();
 }
 
+// Aufgabe 6
+void zahlenpyramide() {
+    clearScreen();
+    for (int i = 10; i >= 0; i--) {
+        for (int j = i; j >= 0; j--) {
+            printf("%d ", j);
+            if (j == 0) {
+                printf("\n");
+            }
+        }
+    }
+
+    puts("");
+    pressAnyKeyMessage();
+}
+
 void schleifenMenue() {
     while (1) {
         clearScreen();
@@ -177,6 +193,7 @@ void schleifenMenue() {
         puts("3: Addition");
         puts("4: Zahlenkette");
         puts("5: Kleines 1*1");
+        puts("6: Zahlenpyramide");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
@@ -197,6 +214,9 @@ void schleifenMenue() {
                 break;
             case 5:
                 kleinesEinsMalEins();
+                break;
+            case 6:
+                zahlenpyramide();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung
