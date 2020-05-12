@@ -1,7 +1,7 @@
 # C Übungsaufgaben
 Dies ist ein Programm, welches Lösungen für die Übungsaufgaben von Herrn Mark beinhaltet.
 
-Dieses Projekt ist konzipiert, mit dem C99 Standard kompatibel zu sein.
+Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwendung mit anderen Compilern kann momentan zu unerwünschtem Verhalten führen.
 
 ## Fortschritt
 - [x] **Ein- und Ausgabebefehle**
