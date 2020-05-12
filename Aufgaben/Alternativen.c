@@ -140,6 +140,8 @@ void datum() {
     time(&zeit);
     struct tm *info;
     info = localtime(&zeit);
+
+    // Für mich ist einfach mal jedes Datum in der Zukunft nicht gültig
     if (jahr > (info->tm_year)+1900){
         gueltigesDatum = 0;
     }

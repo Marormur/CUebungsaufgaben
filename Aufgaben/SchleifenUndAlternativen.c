@@ -28,12 +28,53 @@ void zahlenkette() {
     pressAnyKeyMessage();
 }
 
+int checkForPrimeNumber(int n) {
+    int flag = 0;
+    for (int i = 2; i <= n / 2; ++i) {
+
+        // condition for non-prime
+        if (n % i == 0) {
+            flag = 1;
+            break;
+        }
+    }
+
+    if (n == 1) {
+        return -1; // Weder noch
+    }
+    else {
+        if (flag == 0)
+            return 1; // Primzahl
+        else
+            return 0; // Keine Primzahl
+    }
+}
+
+// Aufgabe 2
+void zahlenreihe() {
+    clearScreen();
+    printf("2, 3, ");
+    for (int i = 0; i <= 20; ++i) {
+        if (!checkForPrimeNumber(i)) {
+            printf("%d", i);
+
+            if (i != 20) {
+                printf(", ");
+            } else {
+                puts("\n");
+            }
+        }
+    }
+
+    pressAnyKeyMessage();
+}
+
 void schleifenUndAlternativenMenue() {
     while (1) {
         clearScreen();
         puts("Aufgaben zu Schleifen und Alternativen:");
         puts("1: Zahlenkette");
-        puts("2: ");
+        puts("2: Zahlenreihe");
         puts("3: ");
         puts("4: ");
         puts("5: ");
@@ -48,6 +89,7 @@ void schleifenUndAlternativenMenue() {
                 zahlenkette();
                 break;
             case 2:
+                zahlenreihe();
                 break;
             case 3:
                 break;
