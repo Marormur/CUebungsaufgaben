@@ -107,6 +107,26 @@ void aBisZ() {
     pressAnyKeyMessage();
 }
 
+// Aufgabe 3
+void addition() {
+    clearScreen();
+    int nochEineAddition = 0;
+    do {
+        printf("Geben Sie die erste Zahl ein: ");
+        double zahl1 = strtod(getString(256), NULL);
+        printf("\nGeben Sie die zweite Zahl ein: ");
+        double zahl2 = strtod(getString(256), NULL);
+        printf("\nErgebnis der Addition beider Zahlen: %lf\nNoch eine Addition? (Y/N) ", zahl1 + zahl2);
+        char input = fgetc(stdin);
+        nochEineAddition = 0;
+        if (input == 'y' || input == 'Y') {
+            nochEineAddition = 1;
+        }
+
+    } while (nochEineAddition);
+    pressAnyKeyMessage();
+}
+
 // Aufgabe 4
 void zahlenKette() {
     clearScreen();
@@ -141,7 +161,7 @@ void schleifenMenue() {
         puts("Aufgaben zu Schleifen:");
         puts("1: 0 bis 9");
         puts("2: a bis z");
-        puts("3: Zahlenkette");
+        puts("3: Addition");
         puts("4: Zahlenkette");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
@@ -154,6 +174,9 @@ void schleifenMenue() {
                 break;
             case 2:
                 aBisZ();
+                break;
+            case 3:
+                addition();
                 break;
             case 4:
                 zahlenKette();
