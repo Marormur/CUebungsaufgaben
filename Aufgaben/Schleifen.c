@@ -7,7 +7,7 @@
 #include "../AllgemeineFunktionen.h"
 #include "Schleifen.h"
 
-
+// Aufgabe 1
 void nullBisNeun() {
     clearScreen();
     puts("Zahlen 0-9:");
@@ -56,7 +56,7 @@ void nullBisNeun() {
     pressAnyKeyMessage();
 }
 
-// Aufgabe 1
+// Aufgabe 2
 void aBisZ() {
     clearScreen();
     puts("Buchstaben a-z:");
@@ -107,13 +107,42 @@ void aBisZ() {
     pressAnyKeyMessage();
 }
 
-// Aufgabe 2
+// Aufgabe 4
+void zahlenKette() {
+    clearScreen();
+    printf("Bitte eine Zahl eingeben: ");
+    int zahl = (int)strtol(getString(256), NULL, 10);
+    puts("\na) Ausgabe:");
+    for (int i = 1; i <= zahl; i++) {
+        printf("%d", i);
+        if (i != zahl) {
+            printf(", ");
+        }
+
+    }
+
+    puts("\n\nb) Ausgabe:");
+    for (int i = 1; i <= zahl; i++) {
+        if (i % 2 == 0) {
+            printf("%d", i);
+            if (i != zahl && i != zahl - 1) {
+                printf(", ");
+            }
+        }
+    }
+
+    puts("");
+    pressAnyKeyMessage();
+}
+
 void schleifenMenue() {
     while (1) {
         clearScreen();
         puts("Aufgaben zu Schleifen:");
         puts("1: 0 bis 9");
         puts("2: a bis z");
+        puts("3: Zahlenkette");
+        puts("4: Zahlenkette");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
@@ -125,6 +154,9 @@ void schleifenMenue() {
                 break;
             case 2:
                 aBisZ();
+                break;
+            case 4:
+                zahlenKette();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung

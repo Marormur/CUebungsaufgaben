@@ -21,6 +21,9 @@ void pressAnyKeyMessage() {
 
 char*  getString(int length){
     char *input = malloc(length);
+
+    // TODO: Obwohl ich hier mit das Problem umgehe, dass ein "\n", welches stdin manchmal hängen bleibt, meine Eingaben überspringt
+    // Scheint das nicht in jedem Compiler zu funktionieren
     fflush(stdin);
     if (fgets(input, length, stdin) == NULL) {
         puts("Fehler mit der Eingabe!");
