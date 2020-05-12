@@ -21,7 +21,7 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [x] Aufgabe 2
     - [x] Aufgabe 3
     - [x] Aufgabe 4
-    - [ ] Aufgabe 5
+    - [x] Aufgabe 5
     - [ ] Aufgabe 6
 - [ ] **Schleifen und Alternativen**
     - [ ] Aufgabe 1

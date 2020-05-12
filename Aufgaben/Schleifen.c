@@ -155,6 +155,19 @@ void zahlenKette() {
     pressAnyKeyMessage();
 }
 
+// Aufgabe 5
+void kleinesEinsMalEins() {
+    clearScreen();
+    for (int i = 1; i <= 10; i++){
+        for (int j = 1; j <= 10; j++) {
+            printf("%d * %d = %d\n", i, j, i*j);
+        }
+    }
+
+    puts("");
+    pressAnyKeyMessage();
+}
+
 void schleifenMenue() {
     while (1) {
         clearScreen();
@@ -163,6 +176,7 @@ void schleifenMenue() {
         puts("2: a bis z");
         puts("3: Addition");
         puts("4: Zahlenkette");
+        puts("5: Kleines 1*1");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
@@ -180,6 +194,9 @@ void schleifenMenue() {
                 break;
             case 4:
                 zahlenKette();
+                break;
+            case 5:
+                kleinesEinsMalEins();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung
