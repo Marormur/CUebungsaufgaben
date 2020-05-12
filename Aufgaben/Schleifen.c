@@ -56,11 +56,64 @@ void nullBisNeun() {
     pressAnyKeyMessage();
 }
 
+// Aufgabe 1
+void aBisZ() {
+    clearScreen();
+    puts("Buchstaben a-z:");
+    puts("Vorwärts mit for-Schleife:");
+    for (int i = 97; i < 123; i++){
+        printf("%c", i);
+        if (i != 122) {
+            printf(", ");
+        } else {
+            puts("");
+        }
+    }
+    puts("\nRückwärts mit for-Schleife:");
+    for (int i = 122; i >= 97; i--) {
+        printf("%c", i);
+        if (i != 97) {
+            printf(", ");
+        } else {
+            puts("");
+        }
+    }
+    puts("\nVorwärts mit while-Schleife:");
+    int zaehler = 97;
+    while (zaehler < 123){
+        printf("%c", zaehler);
+        if (zaehler != 122) {
+            printf(", ");
+        } else {
+            puts("");
+        }
+
+        zaehler++;
+    }
+
+    puts("\nRückwärts mit while-Schleife:");
+    zaehler = 122;
+    while (zaehler > 96) {
+        printf("%c", zaehler);
+        if (zaehler != 97) {
+            printf(", ");
+        } else {
+            puts("\n");
+        }
+
+        zaehler--;
+    }
+
+    pressAnyKeyMessage();
+}
+
+// Aufgabe 2
 void schleifenMenue() {
     while (1) {
         clearScreen();
         puts("Aufgaben zu Schleifen:");
         puts("1: 0 bis 9");
+        puts("2: a bis z");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
@@ -69,6 +122,9 @@ void schleifenMenue() {
                 return;
             case 1:
                 nullBisNeun();
+                break;
+            case 2:
+                aBisZ();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung
