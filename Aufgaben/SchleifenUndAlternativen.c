@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "SchleifenUndAlternativen.h"
 #include "../AllgemeineFunktionen.h"
 
@@ -73,11 +74,11 @@ void zahlenreihe() {
 void zahleneingabe() {
     clearScreen();
     int weiter = 1;
-    int zahlenAnzahl = 0;
-    int * zahlen = malloc(1);
+    size_t zahlenAnzahl = 0;
+    int ** zahlen = (int **)malloc(zahlenAnzahl * sizeof(int *));
 
     while (weiter) {
-        printf("Bitte die %d. Zahl eingeben (Abbruch = 0): ", zahlenAnzahl + 1);
+        printf("Bitte die %lu. Zahl eingeben (Abbruch = 0): ", zahlenAnzahl + 1);
         int eingabe = 0;
         scanf(" %d", &eingabe);
         if (!eingabe) {
@@ -86,8 +87,20 @@ void zahleneingabe() {
         }
 
         zahlen[zahlenAnzahl] = eingabe;
-        zahlenAnzahl++;
-        zahlen = (int *)realloc(zahlen, (zahlenAnzahl + 1) * sizeof(*zahlen));
+        zahlen = (int **)realloc(zahlen, (++zahlenAnzahl) * sizeof(int *));
+    }
+
+    int i,j,temp;
+    for(i=1;i< sizeof(zahlen);++i){
+        for(j=0;j<(sizeof(zahlen)-i);++j)
+        {
+            if(zahlen[j]>zahlen[j+1])
+            {
+                temp=zahlen[j];
+                zahlen[j]=zahlen[j+1];
+                zahlen[j+1]=temp;
+            }
+        }
     }
 
     pressAnyKeyMessage();
@@ -142,6 +155,58 @@ void passwort() {
     pressAnyKeyMessage();
 }
 
+// Aufgabe 5
+void benutzereingabe() {
+    clearScreen();
+    printf("Bitte geben Sie eine 5 stellige Zahl ein: ");
+    char eingabe[256];
+    strcpy(eingabe, getString(256));
+    long eingabeZahl = strtol(eingabe, NULL, 10);
+    if (eingabeZahl >= 100000 || eingabeZahl <=9999) {
+        puts("\nUngültige Eingabe! Die Zahl muss 5stellig sein.");
+        pressAnyKeyMessage();
+        return;
+    }
+
+    if(eingabeZahl % 3 == 0) {
+        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 3 teilbar sein.");
+        pressAnyKeyMessage();
+        return;
+    }
+
+    if(eingabeZahl % 5 == 0) {
+        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 5 teilbar sein.");
+        pressAnyKeyMessage();
+        return;
+    }
+
+    if(eingabeZahl % 7 == 0) {
+        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 7 teilbar sein.");
+        pressAnyKeyMessage();
+        return;
+    }
+
+    if (eingabe[0] == 1 && eingabe[4] != 1) {
+        puts("\nUngültige Eingabe! Eine Zahl, die mit 1 anfängt, muss auch mit 1 enden.");
+        pressAnyKeyMessage();
+        return;
+    }
+
+    int summeDerErstenZiffern = 0;
+    for (int i = 0; i<4;i++) {
+        summeDerErstenZiffern += eingabe[i] - '0';
+    }
+
+    if (summeDerErstenZiffern % 7 != eingabe[4] - '0') {
+        puts("\nUngültige Eingabe! Die 5. Ziffer ist nicht der Rest der Division der Summe der ersten Ziffern durch 7.");
+        pressAnyKeyMessage();
+        return;
+    }
+
+    puts("Eingabe korrekt!");
+    pressAnyKeyMessage();
+}
+
 void schleifenUndAlternativenMenue() {
     while (1) {
         clearScreen();
@@ -150,8 +215,7 @@ void schleifenUndAlternativenMenue() {
         puts("2: Zahlenreihe");
         puts("3: Zahleneingabe"); // Zahlen, Zahlen, Zahlen; hier wurde ich richtig kreativ mit den Namen
         puts("4: Passwort");
-        puts("5: ");
-        puts("6: ");
+        puts("5: Benutzereingabe");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
@@ -171,8 +235,7 @@ void schleifenUndAlternativenMenue() {
                 passwort();
                 break;
             case 5:
-                break;
-            case 6:
+                benutzereingabe();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung

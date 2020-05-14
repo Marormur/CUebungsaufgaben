@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 void clearScreen() {
 #if defined(_WIN32)
@@ -33,5 +34,5 @@ char*  getString(int length){
         return NULL;
     }
 
-    return input;
+    return strdup(input);
 }
