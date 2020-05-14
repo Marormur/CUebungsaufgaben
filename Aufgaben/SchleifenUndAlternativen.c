@@ -74,35 +74,26 @@ void zahlenreihe() {
 void zahleneingabe() {
     clearScreen();
     int weiter = 1;
-    size_t zahlenAnzahl = 0;
-    int ** zahlen = (int **)malloc(zahlenAnzahl * sizeof(int *));
-
+    long max = 0,min = 2147483647,count = 0;
     while (weiter) {
-        printf("Bitte die %lu. Zahl eingeben (Abbruch = 0): ", zahlenAnzahl + 1);
-        int eingabe = 0;
-        scanf(" %d", &eingabe);
+        printf("Bitte die %lu. Zahl eingeben (Abbruch = 0): ", count + 1);
+        long eingabe = strtol(getString(256), NULL, 10);
         if (!eingabe) {
             weiter = 0;
             break;
         }
 
-        zahlen[zahlenAnzahl] = eingabe;
-        zahlen = (int **)realloc(zahlen, (++zahlenAnzahl) * sizeof(int *));
-    }
-
-    int i,j,temp;
-    for(i=1;i< sizeof(zahlen);++i){
-        for(j=0;j<(sizeof(zahlen)-i);++j)
-        {
-            if(zahlen[j]>zahlen[j+1])
-            {
-                temp=zahlen[j];
-                zahlen[j]=zahlen[j+1];
-                zahlen[j+1]=temp;
-            }
+        count++;
+        if (eingabe < min) {
+            min = eingabe;
+        } else if (eingabe > max) {
+            max = eingabe;
         }
     }
 
+    printf("\nAnzahl: %d\n", count);
+    printf("\nMin: %d\n", min);
+    printf("\nMax: %d\n", max);
     pressAnyKeyMessage();
 }
 
