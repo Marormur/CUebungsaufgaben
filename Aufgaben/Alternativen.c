@@ -111,15 +111,27 @@ void dreiZahlen() {
     clearScreen();
     int zahl1, zahl2, zahl3;
     printf("1. Zahl: ");
-    zahl1 = (int)strtol(getString(2), NULL, 10);
+    int groessteZahl, kleinsteZahl;
+    zahl1 = (int)strtol(getString(256), NULL, 10);
+    groessteZahl = zahl1;
+    kleinsteZahl = zahl1;
+
     printf("\n2. Zahl: ");
-    zahl2 = (int)strtol(getString(2), NULL, 10);
+    zahl2 = (int)strtol(getString(256), NULL, 10);
+    if (zahl2 > zahl1) { // If-Alternative 1
+        groessteZahl = zahl2;
+    } else {
+        kleinsteZahl = zahl2;
+    }
+
     printf("\n3. Zahl: ");
-    zahl3 = (int)strtol(getString(2), NULL, 10);
-    int groessteZahl = zahl1, kleinsteZahl = zahl2;
+    zahl3 = (int)strtol(getString(256), NULL, 10);
 
-    // TODO
-
+    if (zahl3 > groessteZahl) {
+        groessteZahl = zahl3;
+    } else if (zahl3 < kleinsteZahl) {
+        kleinsteZahl = zahl3;
+    }
 
     printf("\n\nKleinste Zahl: %d", kleinsteZahl);
     printf("\nGroesste Zahl: %d\n", groessteZahl);

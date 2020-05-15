@@ -10,11 +10,11 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [x] Aufgabe 3
     - [x] Aufgabe 4
     - [x] Aufgabe 5
-- [ ] **Alternativen**
+- [x] **Alternativen**
     - [x] Aufgabe 1
     - [x] Aufgabe 2
     - [x] Aufgabe 3
-    - [ ] Aufgabe 4
+    - [x] Aufgabe 4
     - [x] Aufgabe 5
 - [x] **Schleifen**
     - [x] Aufgabe 1
