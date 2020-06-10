@@ -7,6 +7,7 @@
 #include "Aufgaben/Alternativen.h"
 #include "Aufgaben/Schleifen.h"
 #include "Aufgaben/SchleifenUndAlternativen.h"
+#include "Aufgaben/Arrays.h"
 
 int main() {
     int exitProgram = 0;
@@ -17,6 +18,7 @@ int main() {
         puts("2: Alternativen");
         puts("3: Schleifen");
         puts("4: Schleifen und Alternativen");
+        puts("5: Arrays");
         puts("0: Programm beenden");
         printf("Treffe eine Auswahl: ");
 
@@ -38,6 +40,9 @@ int main() {
                 break;
             case 4:
                 schleifenUndAlternativenMenue();
+                break;
+            case 5:
+                arraysMenue();
                 break;
             default:
                 // Unbehandelt, da man im Menü bleiben soll

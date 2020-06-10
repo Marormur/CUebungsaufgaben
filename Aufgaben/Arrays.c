@@ -7,6 +7,33 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// Aufgabe 1
+void einsBisZehn() {
+    clearScreen();
+    int zahlen[] = { 1,2,3,4,5,6,7,8,9,10};
+    int arrayLaenge = sizeof(zahlen) / sizeof(*zahlen); // Einfach weil ich keine 10 harcoden will
+    for (int i = 0; i < arrayLaenge; i++) {
+        printf("%d", *zahlen+i);
+        if (i == arrayLaenge-1) {
+            puts("");
+        } else {
+            printf(", ");
+        }
+    }
+
+    for (int j = arrayLaenge-1; j >= 0; j--) {
+        printf("%d", *zahlen+j);
+        if (j == 0) {
+            puts("");
+        } else {
+            printf(", ");
+        }
+    }
+
+    puts("");
+    pressAnyKeyMessage();
+}
+
 void arraysMenue() {
     while (1) {
         clearScreen();
@@ -26,6 +53,7 @@ void arraysMenue() {
             case 0:
                 return;
             case 1:
+                einsBisZehn();
                 break;
             case 2:
                 break;
