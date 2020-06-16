@@ -30,9 +30,9 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [x] Aufgabe 4
     - [x] Aufgabe 5
 - [ ] **Arrays**
-    - [ ] Aufgabe 1
-    - [ ] Aufgabe 2
-    - [ ] Aufgabe 3
+    - [x] Aufgabe 1
+    - [x] Aufgabe 2
+    - [x] Aufgabe 3
     - [ ] Aufgabe 4
     - [ ] Aufgabe 5
     - [ ] Aufgabe 6
