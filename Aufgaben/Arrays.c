@@ -34,6 +34,52 @@ void einsBisZehn() {
     pressAnyKeyMessage();
 }
 
+// Aufgabe 2
+void einsBisZehnMultiplikation() {
+    clearScreen();
+    int zahlen[] = { 1,2,3,4,5,6,7,8,9,10};
+    int arrayLaenge = sizeof(zahlen) / sizeof(*zahlen); // Einfach weil ich keine 10 harcoden will
+    for (int i = 0; i < arrayLaenge; i++) {
+        printf("%d", *zahlen+i);
+        if (i != arrayLaenge-1) {
+            printf(" * ");
+        }
+    }
+
+    int ergebnis = 1*2;
+    for(int i = 2; i < arrayLaenge; i++) {
+        ergebnis = ergebnis * (*zahlen+i);
+    }
+
+    printf(" = %d\n\n", ergebnis);
+
+    pressAnyKeyMessage();
+}
+
+// Aufgabe 3
+void zweierPotenz() {
+    clearScreen();
+    printf("Welche 2er-Potenz wollen Sie sich anzeigen lassen? 2 hoch ");
+    int eingabe = (int)strtol(getString(3), NULL, 10);
+    int potenzen[] = {1,2,4,8,16,32,64,128,256,512,1024};
+    if (eingabe < 0 || eingabe > (sizeof(potenzen) / sizeof(*potenzen))) {
+        printf("Die Eingabe muss zwischen 0 und 10 sein!\n\n");
+        pressAnyKeyMessage();
+        return;
+    }
+
+    printf("2 hoch %d ist: %d\n\n", eingabe, potenzen[eingabe]);
+    pressAnyKeyMessage();
+}
+
+// Aufgabe 5
+void durchschnittverbrauch() {
+    clearScreen();
+
+
+    pressAnyKeyMessage();
+}
+
 void arraysMenue() {
     while (1) {
         clearScreen();
@@ -56,10 +102,13 @@ void arraysMenue() {
                 einsBisZehn();
                 break;
             case 2:
+                einsBisZehnMultiplikation();
                 break;
             case 3:
+                zweierPotenz();
                 break;
             case 4:
+                durchschnittverbrauch();
                 break;
             case 5:
                 break;
