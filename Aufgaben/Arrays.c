@@ -6,6 +6,7 @@
 #include "../AllgemeineFunktionen.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 // Aufgabe 1
 void einsBisZehn() {
@@ -72,11 +73,58 @@ void zweierPotenz() {
     pressAnyKeyMessage();
 }
 
-// Aufgabe 5
+// Aufgabe 4
 void durchschnittverbrauch() {
     clearScreen();
+    int eingaben[20][2];
 
+    // Versuche jede Mögliche Eingabe abzufragen
+    for (int i = 0; i < 20; i++) {
+        printf("Geben Sie eine Liter-Zahl an: ");
+        int literEingabe = (int)strtol(getString(32), NULL, 0);
+        printf("Geben Sie eine KM-Zahl ein: ");
+        int kilometerEingabe = (int)strtol(getString(32), NULL, 0);
 
+        // Wenn beides 0 ist, soll die Eingabe beendet werden
+        if (literEingabe == 0 && kilometerEingabe == 0) {
+            break;
+        }
+
+        eingaben[i][0] = literEingabe;
+        eingaben[i][1] = kilometerEingabe;
+    }
+
+    // TODO: schauen, wie ich das rechne; bin gerade zu faul
+
+    pressAnyKeyMessage();
+}
+
+// Aufgabe 5
+void buchstabenanzahl() {
+    clearScreen();
+    printf("Geben Sie ein Wort ein: ");
+    int stringLaenge = 1024;
+    char wortEingabe[stringLaenge];
+    strcpy(wortEingabe, getString(stringLaenge));
+    printf("Geben Sie einen Buchstaben ein: ");
+    char buchstabe = *getString(2);
+    int buchstabenGefunden = 0;
+    char buchstabeZumArbeiten = buchstabe;
+
+    // Wenn es sich um einen kleinen Buchstaben handelt, soll dieser groß gemacht werden
+    if (buchstabeZumArbeiten > 96) {
+        buchstabeZumArbeiten = (char)(buchstabeZumArbeiten-32);
+    }
+
+    for (int i = 0; i < strlen(wortEingabe); ++i) {
+
+        // Groß- und Kleinschreibung ist bei mir egal, also prüfe ich auf beides
+        if (wortEingabe[i] == buchstabeZumArbeiten || (char)(wortEingabe[i] - 32) == buchstabeZumArbeiten) {
+            buchstabenGefunden++;
+        }
+    }
+
+    printf("\n\"%c\" ist %d mal in dem Wort enthalten.\n\n", buchstabe, buchstabenGefunden);
     pressAnyKeyMessage();
 }
 
@@ -111,6 +159,7 @@ void arraysMenue() {
                 durchschnittverbrauch();
                 break;
             case 5:
+                buchstabenanzahl();
                 break;
             case 6:
                 break;
