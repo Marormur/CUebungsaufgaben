@@ -179,6 +179,7 @@ void arraysMenue() {
                 buchstabenanzahl();
                 break;
             case 6:
+                buchstabenanzahlSatz();
                 break;
             case 7:
                 break;
