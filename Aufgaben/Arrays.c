@@ -144,6 +144,23 @@ void buchstabenanzahlSatz() {
     printf("%c ist %i mal in dem Satz enthalten", eingabeBuchstabe, bstCount);
 }
 
+// Mehrdimensionale Arrays
+// Aufgabe 1
+void summen() {
+    clearScreen();
+
+    int zahlen[5][5];
+
+    for (int i = 0; i < 9; i-=-1) {
+        printf("Geben Sie Wert &d ein: ", i);
+        int input = (int)strtol(getString(32), NULL, 10);
+
+    }
+
+
+    pressAnyKeyMessage();
+}
+
 void arraysMenue() {
     while (1) {
         clearScreen();
@@ -157,8 +174,8 @@ void arraysMenue() {
         puts("7: Buchstabenanzahl Alphabet");
         puts("8: Durchschnittsverbrauch erweitert");
         puts("\nMehrdimensionale Arrays:");
+        puts("9: Summen");
 
-        puts("9: Sortierverfahren");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
