@@ -156,6 +156,7 @@ void arraysMenue() {
         puts("6: Buchstabenanzahl mit Satzeingabe");
         puts("7: Buchstabenanzahl Alphabet");
         puts("8: Durchschnittsverbrauch erweitert");
+        puts("9: Sortierverfahren");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
@@ -182,6 +183,10 @@ void arraysMenue() {
             case 7:
                 break;
             case 8:
+                break;
+
+            // Ist Aufgabe 8 von Blatt für Sortierverfahren
+            case 9:
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung
