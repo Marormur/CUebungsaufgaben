@@ -76,26 +76,22 @@ void zweierPotenz() {
 // Aufgabe 4
 void durchschnittverbrauch() {
     clearScreen();
-    int eingaben[20][2];
-
-    // Versuche jede Mögliche Eingabe abzufragen
-    for (int i = 0; i < 20; i++) {
-        printf("Geben Sie eine Liter-Zahl an: ");
-        int literEingabe = (int)strtol(getString(32), NULL, 0);
+    float wertePaare[20][2];
+    float liter = 0;
+    float km = 0;
+    for (int i = 0; i < 20; ++i) {
+        printf("Geben Sie eine Liter-Zahl ein: ");
+        scanf("%f", &wertePaare[i][0]);
         printf("Geben Sie eine KM-Zahl ein: ");
-        int kilometerEingabe = (int)strtol(getString(32), NULL, 0);
-
-        // Wenn beides 0 ist, soll die Eingabe beendet werden
-        if (literEingabe == 0 && kilometerEingabe == 0) {
-            break;
+        scanf("%f", &wertePaare[i][1]);
+        liter = liter + wertePaare[i][0];
+        km = km + wertePaare[i][1];
+        if (wertePaare[i][0] == 0 && wertePaare[i][1] == 0) {
+            i = 20;
         }
-
-        eingaben[i][0] = literEingabe;
-        eingaben[i][1] = kilometerEingabe;
     }
-
-    // TODO: schauen, wie ich das rechne; bin gerade zu faul
-
+    float verbrauch = liter / km * 100;
+    printf("Ihr Auto verbraucht %f Liter auf 100Km", verbrauch);
     pressAnyKeyMessage();
 }
 
