@@ -149,14 +149,68 @@ void buchstabenanzahlSatz() {
 void summen() {
     clearScreen();
 
+    // Erstelle das Grid und lasse es vom Nutzer füllen
     int zahlen[5][5];
-
     for (int i = 0; i < 9; i-=-1) {
-        printf("Geben Sie Wert &d ein: ", i);
+        printf("Geben Sie Wert %d ein: ", i+1);
         int input = (int)strtol(getString(32), NULL, 10);
-
+        switch (i) {
+            case 0:
+            zahlen[1][1] = input;
+            break;
+            case 1:
+            zahlen[1][2] = input;
+            break;
+            case 2:
+            zahlen[1][3] = input;
+            break;
+            case 3:
+            zahlen[2][1] = input;
+            break;
+            case 4:
+            zahlen[2][2] = input;
+            break;
+            case 5:
+            zahlen[2][3] = input;
+            break;
+            case 6:
+            zahlen[3][1] = input;
+            break;
+            case 7:
+            zahlen[3][2] = input;
+            break;
+            case 8:
+            zahlen[3][3] = input;
+            break;
+        }
     }
 
+    // Gebe das Grid aus
+    // Reihe 1
+    int r1 = 4;
+    while(r1--) {
+        printf("\t");
+    }
+
+
+    puts("");
+
+    // Reihe 2
+    printf("\t%d\t%d\t%d\t%d\n", zahlen[1][1], zahlen[1][2], zahlen[1][3], zahlen[1][1] + zahlen[1][2] + zahlen[1][3]);
+
+    // Reihe 3
+    printf("\t%d\t%d\t%d\t%d\n", zahlen[2][1], zahlen[2][2], zahlen[2][3], zahlen[2][1] + zahlen[2][2] + zahlen[2][3]);
+
+    // Reihe 4
+    printf("\t%d\t%d\t%d\t%d\n", zahlen[3][1], zahlen[3][2], zahlen[3][3], zahlen[3][1] + zahlen[3][2] + zahlen[3][3]);
+
+    // Reihe 5
+    int wert1 = zahlen[1][3] + zahlen[2][2] + zahlen[3][1];
+    int wert2 = zahlen[1][1] + zahlen[2][1] + zahlen[3][1];
+    int wert3 = zahlen[1][2] + zahlen[2][2] + zahlen[3][2];
+    int wert4 = zahlen[1][3] + zahlen[2][3] + zahlen[3][3];
+    int wert5 = zahlen[1][1] + zahlen[2][2] + zahlen[3][3];
+    printf("%d\t%d\t%d\t%d\t%d\n", wert1, wert2, wert3, wert4, wert5);
 
     pressAnyKeyMessage();
 }
@@ -205,6 +259,7 @@ void arraysMenue() {
             case 8:
                 break;
             case 9:
+                summen();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung
