@@ -1,0 +1,8 @@
+//
+// Created by Marvin Temmen on 23.09.20.
+//
+
+#ifndef CUEBUNGSAUFGABEN_SORTIERVERFAHREN_H
+#define CUEBUNGSAUFGABEN_SORTIERVERFAHREN_H
+void sortierVerfahrenMenue();
+#endif //CUEBUNGSAUFGABEN_SORTIERVERFAHREN_H

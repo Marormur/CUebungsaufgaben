@@ -38,3 +38,4 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [x] Aufgabe 6
     - [ ] Aufgabe 7
     - [ ] Aufgabe 8
+    - [ ] Aufgabe 9 (Sortierverfahren)

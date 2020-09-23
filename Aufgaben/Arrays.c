@@ -144,10 +144,33 @@ void buchstabenanzahlSatz() {
     printf("%c ist %i mal in dem Satz enthalten", eingabeBuchstabe, bstCount);
 }
 
+// Ist Aufgabe 8 von Blatt für Sortierverfahren
+void sortierVerfahren() {
+    clearScreen();
+    int zahlen[6];
+    int i,x,y,merker;
+    zahlen[1] = 9;
+    zahlen[2] = 10;
+    zahlen[3] = 13;
+    zahlen[4] = 7;
+    zahlen[5] = 3;
+    for (x=1; x<=4; x++) {
+        for(y=x+1; y<=5; y++) {
+            if (zahlen[x] > zahlen[y]) {
+                merker = zahlen[x];
+                zahlen[x] = zahlen[y];
+                zahlen[y] = merker;
+            }
+        }
+    }
+
+    pressAnyKeyMessage();
+}
+
 void arraysMenue() {
     while (1) {
         clearScreen();
-        puts("Aufgaben zu Alternativen:");
+        puts("Eindimensionale Arrays:");
         puts("1: 1 bis 10");
         puts("2: 1 bis 10 Multiplikation");
         puts("3: 2er-Potenz");
@@ -156,6 +179,8 @@ void arraysMenue() {
         puts("6: Buchstabenanzahl mit Satzeingabe");
         puts("7: Buchstabenanzahl Alphabet");
         puts("8: Durchschnittsverbrauch erweitert");
+        puts("\nMehrdimensionale Arrays:");
+
         puts("9: Sortierverfahren");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
@@ -185,8 +210,6 @@ void arraysMenue() {
                 break;
             case 8:
                 break;
-
-            // Ist Aufgabe 8 von Blatt für Sortierverfahren
             case 9:
                 break;
             default:
