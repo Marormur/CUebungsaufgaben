@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 // Aufgabe 1
 void einsBisZehn() {
@@ -122,6 +123,25 @@ void buchstabenanzahl() {
 
     printf("\n\"%c\" ist %d mal in dem Wort enthalten.\n\n", buchstabe, buchstabenGefunden);
     pressAnyKeyMessage();
+}
+
+// Aufgabe 6
+void buchstabenanzahlSatz() {
+    char eingabeString[33];
+    char eingabeBuchstabe;
+    int bstCount = 0;
+    printf("Geben Sie einen Satz ein (max 32 zeichen): ");
+    gets(eingabeString);
+    printf("Geben Sie einen Buchstaben ein: ");
+    scanf(" %c", &eingabeBuchstabe);
+    char eingBst = tolower(eingabeBuchstabe);
+    for (int i = 0; i < 32; ++i) {
+        char strCheck = tolower(eingabeString[i]);
+        if (strCheck == eingBst) {
+            bstCount++;
+        }
+    }
+    printf("%c ist %i mal in dem Satz enthalten", eingabeBuchstabe, bstCount);
 }
 
 void arraysMenue() {
