@@ -30,17 +30,18 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [x] Aufgabe 4
     - [x] Aufgabe 5
 - [ ] **Arrays**
-    - [x] Aufgabe 1
-    - [x] Aufgabe 2
-    - [x] Aufgabe 3
-    - [x] Aufgabe 4
-    - [x] Aufgabe 5
-    - [x] Aufgabe 6
-    - [ ] Aufgabe 7
-    - [ ] Aufgabe 8
-- [ ] **Mehrdimensionale Arrays**
-    - [x] Aufgabe 1
-    - [ ] Aufgabe 2
+    - [ ] Eindimensional
+        - [x] Aufgabe 1
+        - [x] Aufgabe 2
+        - [x] Aufgabe 3
+        - [x] Aufgabe 4
+        - [x] Aufgabe 5
+        - [x] Aufgabe 6
+        - [ ] Aufgabe 7
+        - [ ] Aufgabe 8
+    - [ ] Mehrdimensional
+        - [x] Aufgabe 1
+        - [ ] Aufgabe 2
 - [ ] **Sortierverfahren**
     - [x] Aufgabe 1 
     - [ ] Aufgabe 2 
@@ -50,3 +51,8 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [x] Aufgabe 6 
     - [ ] Aufgabe 7 
     - [ ] Aufgabe 8 
+- [ ] **Structs**
+    - [ ] Aufgabe 1
+    - [ ] Aufgabe 2
+    - [ ] Aufgabe 3
+    - [ ] Aufgabe 4

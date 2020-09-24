@@ -215,6 +215,13 @@ void summen() {
     pressAnyKeyMessage();
 }
 
+// Aufgabe 2
+void sarusVerfahren() {
+    clearScreen();
+
+    pressAnyKeyMessage();
+}
+
 void arraysMenue() {
     while (1) {
         clearScreen();
@@ -229,6 +236,7 @@ void arraysMenue() {
         puts("8: Durchschnittsverbrauch erweitert");
         puts("\nMehrdimensionale Arrays:");
         puts("9: Summen");
+        puts("10: Verfahren von Sarus");
 
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
@@ -260,6 +268,9 @@ void arraysMenue() {
                 break;
             case 9:
                 summen();
+                break;
+            case 10:
+                sarusVerfahren();
                 break;
             default:
                 // Nur zur Unterdrückung einer Warnung

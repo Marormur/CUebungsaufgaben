@@ -9,6 +9,7 @@
 #include "Aufgaben/SchleifenUndAlternativen.h"
 #include "Aufgaben/Arrays.h"
 #include "Aufgaben/Sortierverfahren.h"
+#include "Aufgaben/Structs.h"
 
 int main() {
     int exitProgram = 0;
@@ -48,6 +49,9 @@ int main() {
                 break;
             case 6:
                 sortierVerfahrenMenue();
+                break;
+            case 7:
+                structsMenue();
                 break;
             default:
                 // Unbehandelt, da man im Menü bleiben soll
