@@ -47,7 +47,6 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [ ] Aufgabe 3 
     - [ ] Aufgabe 4 
     - [ ] Aufgabe 5 
-    - [ ] Aufgabe 6 
+    - [x] Aufgabe 6 
     - [ ] Aufgabe 7 
     - [ ] Aufgabe 8 
-    
