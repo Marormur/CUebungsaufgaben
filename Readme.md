@@ -50,7 +50,11 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [ ] Aufgabe 5 
     - [x] Aufgabe 6 
     - [ ] Aufgabe 7 
-    - [ ] Aufgabe 8 
+    - [ ] Aufgabe 8
+- [ ] **Stringverarbeitung**
+    - [ ] Aufgabe 1
+    - [ ] Aufgabe 2
+    - [ ] Aufgabe 3
 - [ ] **Structs**
     - [ ] Aufgabe 1
     - [ ] Aufgabe 2
