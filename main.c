@@ -10,6 +10,7 @@
 #include "Aufgaben/Arrays.h"
 #include "Aufgaben/Sortierverfahren.h"
 #include "Aufgaben/Structs.h"
+#include "Aufgaben/Funktionen.h"
 
 int main() {
     int exitProgram = 0;
@@ -22,6 +23,8 @@ int main() {
         puts("4: Schleifen und Alternativen");
         puts("5: Arrays");
         puts("6: Sortierverfahren");
+        puts("7: Structs");
+        puts("8: Funktionen");
         puts("0: Programm beenden");
         printf("Treffe eine Auswahl: ");
 
@@ -52,6 +55,9 @@ int main() {
                 break;
             case 7:
                 structsMenue();
+                break;
+            case 8:
+                funktionenMenue();
                 break;
             default:
                 // Unbehandelt, da man im Menü bleiben soll
