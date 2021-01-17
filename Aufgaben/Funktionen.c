@@ -18,16 +18,18 @@ int a_zahl1, a_zahl2, a_ergebnis, a_zahl1M, a_zahl2M, a_ergebnisM;
 char a_wunschname[32], a_dateiname[37], a_text[a_maxLaengeText], a_zeichenfolge[a_maxLaengeZeichenfolge];
 char a_dateiEndung[] = ".txt";
 
-void a_addition() {
+int a_addition() {
     printf("Bitte geben Sie die erste Zahl ein: ");
     scanf("%d", &a_zahl1);
     printf("Bitte geben Sie die zweite Zahl ein: ");
     scanf("%d", &a_zahl2);
     a_ergebnis = a_zahl1 + a_zahl2;
     printf("Das ergebnis ist: %d \n\n", a_ergebnis);
+
+    return (0);
 }
 
-void a_dateiAnlegen() {
+int a_dateiAnlegen() {
     printf("Bitte geben Sie einen Dateinamen ein: ");
     scanf("%s", a_wunschname);
     strcpy(a_dateiname, a_wunschname);
@@ -40,10 +42,12 @@ void a_dateiAnlegen() {
 
     printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", a_dateiname,
            strlen(a_dateiname));
+
+    return (0);
 }
 
 // FIXME: Es wird nicht auf die erste Eingabe gewartet
-void a_teiltextInTextSuchen() {
+int a_teiltextInTextSuchen() {
     printf("Bitte geben Sie den zu durchsuchenden Text ein: ");
     fgets(a_text, a_maxLaengeText, stdin);
 
@@ -55,15 +59,19 @@ void a_teiltextInTextSuchen() {
     } else {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", a_zeichenfolge);
     }
+
+    return (0);
 }
 
-void a_multiplikation() {
+int a_multiplikation() {
     printf("Bitte geben Sie die erste Zahl ein: ");
     scanf("%d", &a_zahl1M);
     printf("Bitte geben Sie die zweite Zahl ein: ");
     scanf("%d", &a_zahl2M);
     a_ergebnisM = a_zahl1M * a_zahl2M;
     printf("Das ergebnis ist: %d \n\n", a_ergebnisM);
+
+    return (0);
 }
 
 void a_menue() {
@@ -99,7 +107,7 @@ void a_menue() {
 
 // Aufgabe 1 b)
 
-void b_addition() {
+int b_addition() {
     int zahl1, zahl2, ergebnis;
 
     printf("Bitte geben Sie die erste Zahl ein: ");
@@ -108,9 +116,11 @@ void b_addition() {
     scanf("%d", &zahl2);
     ergebnis = zahl1 + zahl2;
     printf("Das ergebnis ist: %d \n\n", ergebnis);
+
+    return (0);
 }
 
-void b_dateiAnlegen() {
+int b_dateiAnlegen() {
     char wunschname[32], dateiname[37];
     char dateiEndung[] = ".txt";
 
@@ -126,10 +136,12 @@ void b_dateiAnlegen() {
 
     printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", dateiname,
            strlen(dateiname));
+
+    return (0);
 }
 
 // FIXME: Es wird nicht auf die erste Eingabe gewartet
-void b_teiltextInTextSuchen() {
+int b_teiltextInTextSuchen() {
     const int maxLaengeZeichenfolge = 128;
     const int maxLaengeText = 1024;
     char zeichenfolge[maxLaengeZeichenfolge], text[maxLaengeText];
@@ -145,9 +157,11 @@ void b_teiltextInTextSuchen() {
     } else {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
+
+    return (0);
 }
 
-void b_multiplikation() {
+int b_multiplikation() {
     int zahl1, zahl2, ergebnis;
 
     printf("Bitte geben Sie die erste Zahl ein: ");
@@ -156,6 +170,8 @@ void b_multiplikation() {
     scanf("%d", &zahl2);
     ergebnis = zahl1 * zahl2;
     printf("Das ergebnis ist: %d \n\n", ergebnis);
+
+    return (0);
 }
 
 void b_menue() {
@@ -195,7 +211,7 @@ int c_addition(int zahl1, int zahl2) {
     return zahl1 + zahl2;
 }
 
-void c_additionWrapper() {
+int c_additionWrapper() {
     int zahl1, zahl2, ergebnis;
 
     printf("Bitte geben Sie die erste Zahl ein: ");
@@ -207,6 +223,8 @@ void c_additionWrapper() {
     printf("Rückgabewert: %d\n", ergebnis);
 
     printf("Das ergebnis ist: %d \n\n", ergebnis);
+
+    return (0);
 }
 
 int c_dateiAnlegen(char wunschname[32]) {
@@ -226,7 +244,7 @@ int c_dateiAnlegen(char wunschname[32]) {
     return strlen(dateiname);
 }
 
-void c_dateiAnlegenWrapper() {
+int c_dateiAnlegenWrapper() {
     char wunschname[32];
     int laengeGesamtname;
 
@@ -237,6 +255,8 @@ void c_dateiAnlegenWrapper() {
     printf("Rückgabewert: %d\n", laengeGesamtname);
 
     printf("Der Name ist %d Zeichen lang\n", laengeGesamtname);
+
+    return (0);
 }
 
 bool c_teiltextInTextSuchen(char text[1024], char zeichenfolge[128]) {
@@ -244,7 +264,7 @@ bool c_teiltextInTextSuchen(char text[1024], char zeichenfolge[128]) {
 }
 
 // FIXME: Es wird nicht auf die erste Eingabe gewartet
-void c_teiltextInTextSuchenWrapper() {
+int c_teiltextInTextSuchenWrapper() {
     const int maxLaengeZeichenfolge = 128;
     const int maxLaengeText = 1024;
     char zeichenfolge[maxLaengeZeichenfolge], text[maxLaengeText];
@@ -264,13 +284,15 @@ void c_teiltextInTextSuchenWrapper() {
     } else {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
+
+    return (0);
 }
 
 int c_multiplikation(int zahl1, int zahl2) {
     return zahl1 * zahl2;
 }
 
-void c_multiplikationWrapper() {
+int c_multiplikationWrapper() {
     int zahl1, zahl2, ergebnis;
 
     printf("Bitte geben Sie die erste Zahl ein: ");
@@ -282,6 +304,8 @@ void c_multiplikationWrapper() {
     printf("Rückgabewert: %d", ergebnis);
 
     printf("Das ergebnis ist: %d \n\n", ergebnis);
+
+    return (0);
 }
 
 void c_menue() {
