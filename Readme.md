@@ -61,8 +61,8 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
     - [ ] Aufgabe 3
     - [ ] Aufgabe 4
 - [ ] **Funktionen**
-    - [ ] Aufgabe 1
+    - [ ] Aufgabe 1 - In allen Teilaufgaben besteht ein Problem mit dem User-Input
         - [x] a)
         - [x] b)
-        - [ ] c)
+        - [x] c)
     - [ ] Aufgabe 2
