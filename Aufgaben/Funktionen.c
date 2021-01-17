@@ -33,11 +33,12 @@ void a_dateiAnlegen() {
     strcat(a_dateiname, a_dateiEndung);
 
     // hier erstellte Dateien werden im Ordner "cmake-build-debug" gespeichert
-    FILE * datei;
+    FILE *datei;
     datei = fopen(a_dateiname, "w");
     fclose(datei);
 
-    printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", a_dateiname, strlen(a_dateiname));
+    printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", a_dateiname,
+           strlen(a_dateiname));
 }
 
 // FIXME: Es wird nicht auf die erste Eingabe gewartet
@@ -75,7 +76,7 @@ void a_menue() {
 
         puts("0: Ende (Zurück zum Hauptmenü)");
         printf("\nTreffe eine Auswahl: ");
-        int input = (int)strtol(getString(2), NULL, 10);
+        int input = (int) strtol(getString(2), NULL, 10);
         switch (input) {
             case 0:
                 return;
@@ -118,11 +119,12 @@ void b_dateiAnlegen() {
     strcat(dateiname, dateiEndung);
 
     // hier erstellte Dateien werden im Ordner "cmake-build-debug" gespeichert
-    FILE * datei;
+    FILE *datei;
     datei = fopen(dateiname, "w");
     fclose(datei);
 
-    printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", dateiname, strlen(dateiname));
+    printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", dateiname,
+           strlen(dateiname));
 }
 
 // FIXME: Es wird nicht auf die erste Eingabe gewartet
@@ -166,7 +168,7 @@ void b_menue() {
 
         puts("0: Ende (Zurück zum Hauptmenü)");
         printf("\nTreffe eine Auswahl: ");
-        int input = (int)strtol(getString(2), NULL, 10);
+        int input = (int) strtol(getString(2), NULL, 10);
         switch (input) {
             case 0:
                 return;
@@ -197,7 +199,7 @@ void funktionenMenue() {
 
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
-        int input = (int)strtol(getString(2), NULL, 10);
+        int input = (int) strtol(getString(2), NULL, 10);
         switch (input) {
             case 0:
                 return;
