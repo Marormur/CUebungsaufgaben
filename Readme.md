@@ -63,6 +63,6 @@ Dieses Projekt ist für den Standard C99 und den Clang Compiler ausgelegt. Verwe
 - [ ] **Funktionen**
     - [ ] Aufgabe 1
         - [x] a)
-        - [ ] b)
+        - [x] b)
         - [ ] c)
     - [ ] Aufgabe 2
