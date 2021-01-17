@@ -15,7 +15,7 @@
 const int a_maxLaengeZeichenfolge = 128;
 const int a_maxLaengeText = 1024;
 int a_zahl1, a_zahl2, a_ergebnis, a_zahl1M, a_zahl2M, a_ergebnisM;
-char a_wunschname[32], a_dateiname[37], a_text[a_maxLaengeText], a_zeichenfolge[a_maxLaengeZeichenfolge];
+char a_wunschname[32], a_dateiname[37], a_text[1024], a_zeichenfolge[128];
 char a_dateiEndung[] = ".txt";
 
 int a_addition() {
@@ -142,15 +142,13 @@ int b_dateiAnlegen() {
 
 // FIXME: Es wird nicht auf die erste Eingabe gewartet
 int b_teiltextInTextSuchen() {
-    const int maxLaengeZeichenfolge = 128;
-    const int maxLaengeText = 1024;
-    char zeichenfolge[maxLaengeZeichenfolge], text[maxLaengeText];
+    char zeichenfolge[128], text[1024];
 
     printf("Bitte geben Sie den zu durchsuchenden Text ein: ");
-    fgets(text, maxLaengeText, stdin);
+    fgets(text, sizeof(text) / sizeof(text[0]), stdin);
 
     printf("Bitte geben Sie die zu suchende Zeichenfolge ein: ");
-    fgets(zeichenfolge, maxLaengeZeichenfolge, stdin);
+    fgets(zeichenfolge, sizeof(zeichenfolge) / sizeof(zeichenfolge[0]), stdin);
 
     if (strstr(a_text, a_zeichenfolge)) {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s'.\n", zeichenfolge);
@@ -265,16 +263,14 @@ bool c_teiltextInTextSuchen(char text[1024], char zeichenfolge[128]) {
 
 // FIXME: Es wird nicht auf die erste Eingabe gewartet
 int c_teiltextInTextSuchenWrapper() {
-    const int maxLaengeZeichenfolge = 128;
-    const int maxLaengeText = 1024;
-    char zeichenfolge[maxLaengeZeichenfolge], text[maxLaengeText];
+    char zeichenfolge[128], text[1024];
     bool enthalten;
 
     printf("Bitte geben Sie den zu durchsuchenden Text ein: ");
-    fgets(text, maxLaengeText, stdin);
+    fgets(text, sizeof(text) / sizeof(text[0]), stdin);
 
     printf("Bitte geben Sie die zu suchende Zeichenfolge ein: ");
-    fgets(zeichenfolge, maxLaengeZeichenfolge, stdin);
+    fgets(zeichenfolge, sizeof(zeichenfolge) / sizeof(zeichenfolge[0]), stdin);
 
     enthalten = c_teiltextInTextSuchen(text, zeichenfolge);
     fputs(enthalten ? "Rückgabewert: true\n" : "Rückgabewert: flase\n", stdout);

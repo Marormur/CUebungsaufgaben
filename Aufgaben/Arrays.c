@@ -100,9 +100,8 @@ void durchschnittverbrauch() {
 void buchstabenanzahl() {
     clearScreen();
     printf("Geben Sie ein Wort ein: ");
-    int stringLaenge = 1024;
-    char wortEingabe[stringLaenge];
-    strcpy(wortEingabe, getString(stringLaenge));
+    char wortEingabe[1024];
+    strcpy(wortEingabe, getString(sizeof(wortEingabe) / sizeof(wortEingabe[0])));
     printf("Geben Sie einen Buchstaben ein: ");
     char buchstabe = *getString(2);
     int buchstabenGefunden = 0;
