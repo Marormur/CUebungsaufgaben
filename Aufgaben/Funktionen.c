@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include "../AllgemeineFunktionen.h"
 
@@ -188,13 +189,138 @@ void b_menue() {
 }
 
 
+// Aufgabe 1 c)
+
+int c_addition(int zahl1, int zahl2) {
+    return zahl1 + zahl2;
+}
+
+void c_additionWrapper() {
+    int zahl1, zahl2, ergebnis;
+
+    printf("Bitte geben Sie die erste Zahl ein: ");
+    scanf("%d", &zahl1);
+    printf("Bitte geben Sie die zweite Zahl ein: ");
+    scanf("%d", &zahl2);
+
+    ergebnis = c_addition(zahl1, zahl2);
+    printf("Rückgabewert: %d\n", ergebnis);
+
+    printf("Das ergebnis ist: %d \n\n", ergebnis);
+}
+
+int c_dateiAnlegen(char wunschname[32]) {
+    char dateiname[37];
+    char dateiEndung[] = ".txt";
+
+    strcpy(dateiname, wunschname);
+    strcat(dateiname, dateiEndung);
+
+    // hier erstellte Dateien werden im Ordner "cmake-build-debug" gespeichert
+    FILE *datei;
+    datei = fopen(dateiname, "w");
+    fclose(datei);
+
+    printf("Die Datei mit dem Namen '%s' wurde angelegt. \n", dateiname);
+
+    return strlen(dateiname);
+}
+
+void c_dateiAnlegenWrapper() {
+    char wunschname[32];
+    int laengeGesamtname;
+
+    printf("Bitte geben Sie einen Dateinamen ein: ");
+    scanf("%s", wunschname);
+
+    laengeGesamtname = c_dateiAnlegen(wunschname);
+    printf("Rückgabewert: %d\n", laengeGesamtname);
+
+    printf("Der Name ist %d Zeichen lang\n", laengeGesamtname);
+}
+
+bool c_teiltextInTextSuchen(char text[1024], char zeichenfolge[128]) {
+    return strstr(text, zeichenfolge);
+}
+
+// FIXME: Es wird nicht auf die erste Eingabe gewartet
+void c_teiltextInTextSuchenWrapper() {
+    const int maxLaengeZeichenfolge = 128;
+    const int maxLaengeText = 1024;
+    char zeichenfolge[maxLaengeZeichenfolge], text[maxLaengeText];
+    bool enthalten;
+
+    printf("Bitte geben Sie den zu durchsuchenden Text ein: ");
+    fgets(text, maxLaengeText, stdin);
+
+    printf("Bitte geben Sie die zu suchende Zeichenfolge ein: ");
+    fgets(zeichenfolge, maxLaengeZeichenfolge, stdin);
+
+    enthalten = c_teiltextInTextSuchen(text, zeichenfolge);
+    fputs(enthalten ? "Rückgabewert: true\n" : "Rückgabewert: flase\n", stdout);
+
+    if (enthalten) {
+        printf("Der eingegebene Text enthält die Zeichenfolge '%s'.\n", zeichenfolge);
+    } else {
+        printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
+    }
+}
+
+int c_multiplikation(int zahl1, int zahl2) {
+    return zahl1 * zahl2;
+}
+
+void c_multiplikationWrapper() {
+    int zahl1, zahl2, ergebnis;
+
+    printf("Bitte geben Sie die erste Zahl ein: ");
+    scanf("%d", &zahl1);
+    printf("Bitte geben Sie die zweite Zahl ein: ");
+    scanf("%d", &zahl2);
+
+    ergebnis = c_multiplikation(zahl1, zahl2);
+    printf("Rückgabewert: %d", ergebnis);
+
+    printf("Das ergebnis ist: %d \n\n", ergebnis);
+}
+
+void c_menue() {
+    while (1) {
+        clearScreen();
+        puts("Aufgabe 1b)");
+        puts("1: Addieren");
+        puts("2: Datei anlegen");
+        puts("3: Teiltext in Text suchen");
+        puts("4: Multiplizieren");
+
+        puts("0: Ende (Zurück zum Hauptmenü)");
+        printf("\nTreffe eine Auswahl: ");
+        int input = (int) strtol(getString(2), NULL, 10);
+        switch (input) {
+            case 0:
+                return;
+            case 1:
+                c_additionWrapper();
+            case 2:
+                c_dateiAnlegenWrapper();
+            case 3:
+                c_teiltextInTextSuchenWrapper();
+            case 4:
+                c_multiplikationWrapper();
+            default:
+                // Nur zur Unterdrückung einer Warnung
+                break;
+        }
+    }
+}
+
 void funktionenMenue() {
     while (1) {
         clearScreen();
         puts("Aufgaben zu Funktionen:");
         puts("1: Funktionen erhalten / liefern keine Werte, alle Variablen global");
         puts("2: Funktionen erhalten / liefern keine Werte, alle Variablen lokal");
-        puts("3: ");
+        puts("3: Alle Funktionen erhalten alle Werte, die sie benötigen & liefern Werte zurück");
         puts("4: ");
 
         puts("0: Zurück zum Hauptmenü");
@@ -208,7 +334,7 @@ void funktionenMenue() {
             case 2:
                 b_menue();
             case 3:
-                break;
+                c_menue();
             case 4:
                 break;
             default:
