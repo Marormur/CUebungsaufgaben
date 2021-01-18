@@ -14,7 +14,8 @@ void einsBisZehn() {
     clearScreen();
     int zahlen[] = { 1,2,3,4,5,6,7,8,9,10};
     int arrayLaenge = sizeof(zahlen) / sizeof(*zahlen); // Einfach weil ich keine 10 harcoden will
-    for (int i = 0; i < arrayLaenge; i++) {
+    int i;
+    for (i = 0; i < arrayLaenge; i++) {
         printf("%d", *zahlen+i);
         if (i == arrayLaenge-1) {
             puts("");
@@ -23,7 +24,8 @@ void einsBisZehn() {
         }
     }
 
-    for (int j = arrayLaenge-1; j >= 0; j--) {
+    int j;
+    for (j = arrayLaenge-1; j >= 0; j--) {
         printf("%d", *zahlen+j);
         if (j == 0) {
             puts("");
@@ -41,7 +43,8 @@ void einsBisZehnMultiplikation() {
     clearScreen();
     int zahlen[] = { 1,2,3,4,5,6,7,8,9,10};
     int arrayLaenge = sizeof(zahlen) / sizeof(*zahlen); // Einfach weil ich keine 10 harcoden will
-    for (int i = 0; i < arrayLaenge; i++) {
+    int i;
+    for (i = 0; i < arrayLaenge; i++) {
         printf("%d", *zahlen+i);
         if (i != arrayLaenge-1) {
             printf(" * ");
@@ -49,7 +52,8 @@ void einsBisZehnMultiplikation() {
     }
 
     int ergebnis = 1*2;
-    for(int i = 2; i < arrayLaenge; i++) {
+    int i;
+    for(i = 2; i < arrayLaenge; i++) {
         ergebnis = ergebnis * (*zahlen+i);
     }
 
@@ -80,7 +84,8 @@ void durchschnittverbrauch() {
     float wertePaare[20][2];
     float liter = 0;
     float km = 0;
-    for (int i = 0; i < 20; ++i) {
+    int i;
+    for (i = 0; i < 20; ++i) {
         printf("Geben Sie eine Liter-Zahl ein: ");
         scanf("%f", &wertePaare[i][0]);
         printf("Geben Sie eine KM-Zahl ein: ");
@@ -112,7 +117,8 @@ void buchstabenanzahl() {
         buchstabeZumArbeiten = (char)(buchstabeZumArbeiten-32);
     }
 
-    for (int i = 0; i < strlen(wortEingabe); ++i) {
+    int i;
+    for (i = 0; i < strlen(wortEingabe); ++i) {
 
         // Groß- und Kleinschreibung ist bei mir egal, also prüfe ich auf beides
         if (wortEingabe[i] == buchstabeZumArbeiten || (char)(wortEingabe[i] - 32) == buchstabeZumArbeiten) {
@@ -134,7 +140,8 @@ void buchstabenanzahlSatz() {
     printf("Geben Sie einen Buchstaben ein: ");
     scanf(" %c", &eingabeBuchstabe);
     char eingBst = tolower(eingabeBuchstabe);
-    for (int i = 0; i < 32; ++i) {
+    int i;
+    for (i = 0; i < 32; ++i) {
         char strCheck = tolower(eingabeString[i]);
         if (strCheck == eingBst) {
             bstCount++;
@@ -150,7 +157,8 @@ void summen() {
 
     // Erstelle das Grid und lasse es vom Nutzer füllen
     int zahlen[5][5];
-    for (int i = 0; i < 9; i-=-1) {
+    int i;
+    for (i = 0; i < 9; i-=-1) {
         printf("Geben Sie Wert %d ein: ", i+1);
         int input = (int)strtol(getString(32), NULL, 10);
         switch (i) {
@@ -237,7 +245,7 @@ void arraysMenue() {
         puts("9: Summen");
         puts("10: Verfahren von Sarus");
 
-        puts("0: Zurück zum Hauptmenü");
+        puts("0: Zur\x81 \bck zum Hauptmen\x81");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {

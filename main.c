@@ -16,7 +16,7 @@ int main() {
     int exitProgram = 0;
     while (!exitProgram) {
         clearScreen();
-        puts("==== L\x94sungen zu den C \x9A\ bungsaufgaben ====");
+        puts("==== L\x94sungen zu den C \x9A \bbungsaufgaben ====");
         puts("1: Ein- und Ausgabe");
         puts("2: Alternativen");
         puts("3: Schleifen");

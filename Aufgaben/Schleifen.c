@@ -12,7 +12,8 @@ void nullBisNeun() {
     clearScreen();
     puts("Zahlen 0-9:");
     puts("Vorw\x84rts mit for-Schleife:");
-    for (int i = 0; i < 10; i++){
+    int i;
+    for (i = 0; i < 10; i++){
         printf("%d", i);
         if (i != 9) {
             printf(", ");
@@ -20,8 +21,8 @@ void nullBisNeun() {
             puts("");
         }
     }
-    puts("\nRückw\x84rts mit for-Schleife:");
-    for (int i = 9; i >= 0; i--) {
+    puts("\nR\x81 \bckw\x84rts mit for-Schleife:");
+    for (i = 9; i >= 0; i--) {
         printf("%d", i);
         if (i != 0) {
             printf(", ");
@@ -42,7 +43,7 @@ void nullBisNeun() {
         zaehler++;
     }
 
-    puts("\nRückw\x84rts mit while-Schleife:");
+    puts("\nR\x81 \bckw\x84rts mit while-Schleife:");
     zaehler = 10;
     while (zaehler--) {
         printf("%d", zaehler);
@@ -61,7 +62,8 @@ void aBisZ() {
     clearScreen();
     puts("Buchstaben a-z:");
     puts("Vorw\x84rts mit for-Schleife:");
-    for (int i = 97; i < 123; i++){
+    int i;
+    for (i = 97; i < 123; i++){
         printf("%c", i);
         if (i != 122) {
             printf(", ");
@@ -69,8 +71,8 @@ void aBisZ() {
             puts("");
         }
     }
-    puts("\nRückw\x84rts mit for-Schleife:");
-    for (int i = 122; i >= 97; i--) {
+    puts("\nR\x81 \bckw\x84rts mit for-Schleife:");
+    for (i = 122; i >= 97; i--) {
         printf("%c", i);
         if (i != 97) {
             printf(", ");
@@ -91,7 +93,7 @@ void aBisZ() {
         zaehler++;
     }
 
-    puts("\nRückw\x84rts mit while-Schleife:");
+    puts("\nR\x81 \bckw\x84rts mit while-Schleife:");
     zaehler = 122;
     while (zaehler > 96) {
         printf("%c", zaehler);
@@ -133,7 +135,8 @@ void zahlenKette() {
     printf("Bitte eine Zahl eingeben: ");
     int zahl = (int)strtol(getString(256), NULL, 10);
     puts("\na) Ausgabe:");
-    for (int i = 1; i <= zahl; i++) {
+    int i;
+    for (i = 1; i <= zahl; i++) {
         printf("%d", i);
         if (i != zahl) {
             printf(", ");
@@ -142,7 +145,7 @@ void zahlenKette() {
     }
 
     puts("\n\nb) Ausgabe:");
-    for (int i = 1; i <= zahl; i++) {
+    for (i = 1; i <= zahl; i++) {
         if (i % 2 == 0) {
             printf("%d", i);
             if (i != zahl && i != zahl - 1) {
@@ -158,8 +161,9 @@ void zahlenKette() {
 // Aufgabe 5
 void kleinesEinsMalEins() {
     clearScreen();
-    for (int i = 1; i <= 10; i++){
-        for (int j = 1; j <= 10; j++) {
+    int i, j;
+    for (i = 1; i <= 10; i++){
+        for (j = 1; j <= 10; j++) {
             printf("%d * %d = %d\n", i, j, i*j);
         }
     }
@@ -171,8 +175,9 @@ void kleinesEinsMalEins() {
 // Aufgabe 6
 void zahlenpyramide() {
     clearScreen();
-    for (int i = 10; i >= 0; i--) {
-        for (int j = i; j >= 0; j--) {
+    int i, j;
+    for (i = 10; i >= 0; i--) {
+        for (j = i; j >= 0; j--) {
             printf("%d ", j);
             if (j == 0) {
                 printf("\n");
@@ -194,7 +199,7 @@ void schleifenMenue() {
         puts("4: Zahlenkette");
         puts("5: Kleines 1*1");
         puts("6: Zahlenpyramide");
-        puts("0: Zurück zum Hauptmenü");
+        puts("0: Zur\x81 \bck zum Hauptmen\x81");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {

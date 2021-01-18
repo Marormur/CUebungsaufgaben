@@ -122,10 +122,10 @@ void einUndAusgabeMenue() {
         puts("3: ABBA");
         puts("4: Herstellungskosten");
         puts("5: lineare Gleichung");
-        puts("0: Zurück zum Hauptmenü");
+        puts("0: Zur\x81 \bck zum Hauptmen\x81");
         printf("\nTreffe eine Auswahl: ");
         long input = strtol(getString(2), NULL, 10);
-        switch (input) {
+          switch (input) {
             case 0:
                 return;
             case 1:

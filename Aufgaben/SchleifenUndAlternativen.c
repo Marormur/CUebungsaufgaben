@@ -14,11 +14,12 @@ void zahlenkette() {
     printf("Bitte eine Zahl eingeben: ");
     long zahl = strtol(getString(256), NULL, 10);
     printf("\nAusgabe: ");
-    for (long i = 1; i <= zahl; ++i) {
+    long i, j;
+    for (i = 1; i <= zahl; ++i) {
         printf("%ld, ", i);
     }
 
-    for (long j = zahl-1; j > 0; j--) {
+    for (j = zahl-1; j > 0; j--) {
         printf("%ld",j);
         if(j != 1) {
             printf(", ");
@@ -31,7 +32,8 @@ void zahlenkette() {
 
 int checkForPrimeNumber(int n) {
     int flag = 0;
-    for (int i = 2; i <= n / 2; ++i) {
+    int i;
+    for (i = 2; i <= n / 2; ++i) {
 
         // condition for non-prime
         if (n % i == 0) {
@@ -55,7 +57,8 @@ int checkForPrimeNumber(int n) {
 void zahlenreihe() {
     clearScreen();
     printf("2, 3, ");
-    for (int i = 0; i <= 20; ++i) {
+    int i;
+    for (i = 0; i <= 20; ++i) {
         if (!checkForPrimeNumber(i)) {
             printf("%d", i);
 
@@ -102,7 +105,8 @@ void passwort() {
     clearScreen();
     puts("Passwort-Eingabe 1");
     char buchstaben[4];
-    for (int i = 1; i <= 4; i++) {
+    int i;
+    for (i = 1; i <= 4; i++) {
         printf("Bitte geben Sie den %d. Buchstaben Ihres Passworts ein: ", i);
         fflush(stdin);
         buchstaben[i - 1] = (char)getc(stdin);
@@ -131,7 +135,8 @@ void passwort() {
 
     char password[] = "GOPR";
     int richtigesPasswort = 1;
-    for (int k = 0; k < 4; ++k) {
+    int k;
+    for (k = 0; k < 4; ++k) {
         if (buchstaben[k] != password[k]) {
             richtigesPasswort = 0;
         }
@@ -154,42 +159,43 @@ void benutzereingabe() {
     strcpy(eingabe, getString(256));
     long eingabeZahl = strtol(eingabe, NULL, 10);
     if (eingabeZahl >= 100000 || eingabeZahl <=9999) {
-        puts("\nUngültige Eingabe! Die Zahl muss 5stellig sein.");
+        puts("\nUng\x81 \bltige Eingabe! Die Zahl muss 5stellig sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if(eingabeZahl % 3 == 0) {
-        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 3 teilbar sein.");
+        puts("\nUng\x81 \bltige Eingabe! Die Zahl darf nicht durch 3 teilbar sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if(eingabeZahl % 5 == 0) {
-        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 5 teilbar sein.");
+        puts("\nUng\x81 \bltige Eingabe! Die Zahl darf nicht durch 5 teilbar sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if(eingabeZahl % 7 == 0) {
-        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 7 teilbar sein.");
+        puts("\nUng\x81 \bltige Eingabe! Die Zahl darf nicht durch 7 teilbar sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if (eingabe[0] == 1 && eingabe[4] != 1) {
-        puts("\nUngültige Eingabe! Eine Zahl, die mit 1 anf\x84ngt, muss auch mit 1 enden.");
+        puts("\nUng\x81 \bltige Eingabe! Eine Zahl, die mit 1 anf\x84ngt, muss auch mit 1 enden.");
         pressAnyKeyMessage();
         return;
     }
 
     int summeDerErstenZiffern = 0;
-    for (int i = 0; i<4;i++) {
+    int i;
+    for (i = 0; i<4;i++) {
         summeDerErstenZiffern += eingabe[i] - '0';
     }
 
     if (summeDerErstenZiffern % 7 != eingabe[4] - '0') {
-        puts("\nUngültige Eingabe! Die 5. Ziffer ist nicht der Rest der Division der Summe der ersten Ziffern durch 7.");
+        puts("\nUng\x81 \bltige Eingabe! Die 5. Ziffer ist nicht der Rest der Division der Summe der ersten Ziffern durch 7.");
         pressAnyKeyMessage();
         return;
     }
@@ -207,7 +213,7 @@ void schleifenUndAlternativenMenue() {
         puts("3: Zahleneingabe"); // Zahlen, Zahlen, Zahlen; hier wurde ich richtig kreativ mit den Namen
         puts("4: Passwort");
         puts("5: Benutzereingabe");
-        puts("0: Zurück zum Hauptmenü");
+        puts("0: Zur\x81 \bck zum Hauptmen\x81");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {

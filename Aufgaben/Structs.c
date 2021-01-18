@@ -16,7 +16,7 @@ void structsMenue() {
         puts("3: ");
         puts("4: ");
 
-        puts("0: Zurück zum Hauptmenü");
+        puts("0: Zur\x81 \bck zum Hauptmen\x81");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {
