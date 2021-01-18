@@ -52,7 +52,6 @@ void einsBisZehnMultiplikation() {
     }
 
     int ergebnis = 1*2;
-    int i;
     for(i = 2; i < arrayLaenge; i++) {
         ergebnis = ergebnis * (*zahlen+i);
     }

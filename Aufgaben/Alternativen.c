@@ -59,7 +59,7 @@ void notenLookup() {
             printf("\nMangelhaft\n\n");
             break;
         case 6:
-            printf("\nUngenügend\n\n");
+            printf("\nUngen\x81 \bgend\n\n");
             break;
         default:
             printf("\nDie Eingabe stellt keine Note dar!\n\n");
@@ -100,7 +100,7 @@ void menue() {
             printf("\nSie haben \"ENDE\" gew\x84hlt.\n");
             break;
         default:
-            printf("\nUngültige Eingabe!\n");
+            printf("\nUng\x81 \bltige Eingabe!\n");
             break;
     }
 
@@ -198,7 +198,7 @@ void alternativenMenue() {
     while (1) {
         clearScreen();
         puts("Aufgaben zu Alternativen:");
-        puts("1: Begrüßung");
+        puts("1: Begr\x81 \bßung");
         puts("2: Schulnoten");
         puts("3: Menü");
         puts("4: Drei Zahlen");

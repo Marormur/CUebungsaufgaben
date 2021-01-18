@@ -94,9 +94,9 @@ void zahleneingabe() {
         }
     }
 
-    printf("\nAnzahl: %d\n", count);
-    printf("\nMin: %d\n", min);
-    printf("\nMax: %d\n", max);
+    printf("\nAnzahl: %ld\n", count);
+    printf("\nMin: %ld\n", min);
+    printf("\nMax: %ld\n", max);
     pressAnyKeyMessage();
 }
 
@@ -120,7 +120,7 @@ void passwort() {
     }
 
     // Sortiere die Zeichen der Eingabe
-    int i,j,temp;
+    int j,temp;
     for(i=1;i< sizeof(buchstaben);++i){
         for(j=0;j<(sizeof(buchstaben)-i);++j)
         {
@@ -156,7 +156,7 @@ void benutzereingabe() {
     clearScreen();
     printf("Bitte geben Sie eine 5 stellige Zahl ein: ");
     char eingabe[256];
-    strcpy(eingabe, getString(256));
+    strcpy_s(eingabe, sizeof(eingabe), getString(256));
     long eingabeZahl = strtol(eingabe, NULL, 10);
     if (eingabeZahl >= 100000 || eingabeZahl <=9999) {
         puts("\nUng\x81 \bltige Eingabe! Die Zahl muss 5stellig sein.");
