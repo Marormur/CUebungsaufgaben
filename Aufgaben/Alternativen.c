@@ -73,8 +73,8 @@ void notenLookup() {
 void menue() {
     clearScreen();
     puts("(1) Daten laden");
-    puts("(2) Daten ergänzen");
-    puts("(3) Daten löschen");
+    puts("(2) Daten erg\x84nzen");
+    puts("(3) Daten l\x94schen");
     puts("(4) Daten auswerten");
     puts("(5) Daten speichern");
     puts("(0) ENDE");
@@ -82,22 +82,22 @@ void menue() {
     long input = strtol(getString(256), NULL, 10);
     switch (input) {
         case 1:
-            printf("\nSie haben \"Daten laden\" gewählt.\n");
+            printf("\nSie haben \"Daten laden\" gew\x84hlt.\n");
             break;
         case 2:
-            printf("\nSie haben \"Daten ergänzen\" gewählt.\n");
+            printf("\nSie haben \"Daten erg\x84nzen\" gew\x84hlt.\n");
             break;
         case 3:
-            printf("\nSie haben \"Daten löschen\" gewählt.\n");
+            printf("\nSie haben \"Daten l\x94schen\" gew\x84hlt.\n");
             break;
         case 4:
-            printf("\nSie haben \"Daten auswerten\" gewählt.\n");
+            printf("\nSie haben \"Daten auswerten\" gew\x84hlt.\n");
             break;
         case 5:
-            printf("\nSie haben \"Daten speichern\" gewählt.\n");
+            printf("\nSie haben \"Daten speichern\" gew\x84hlt.\n");
             break;
         case 0:
-            printf("\nSie haben \"ENDE\" gewählt.\n");
+            printf("\nSie haben \"ENDE\" gew\x84hlt.\n");
             break;
         default:
             printf("\nUngültige Eingabe!\n");

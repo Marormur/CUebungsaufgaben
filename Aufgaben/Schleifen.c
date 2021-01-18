@@ -11,7 +11,7 @@
 void nullBisNeun() {
     clearScreen();
     puts("Zahlen 0-9:");
-    puts("Vorwärts mit for-Schleife:");
+    puts("Vorw\x84rts mit for-Schleife:");
     for (int i = 0; i < 10; i++){
         printf("%d", i);
         if (i != 9) {
@@ -20,7 +20,7 @@ void nullBisNeun() {
             puts("");
         }
     }
-    puts("\nRückwärts mit for-Schleife:");
+    puts("\nRückw\x84rts mit for-Schleife:");
     for (int i = 9; i >= 0; i--) {
         printf("%d", i);
         if (i != 0) {
@@ -29,7 +29,7 @@ void nullBisNeun() {
             puts("");
         }
     }
-    puts("\nVorwärts mit while-Schleife:");
+    puts("\nVorw\x84rts mit while-Schleife:");
     int zaehler = 0;
     while (zaehler < 10){
         printf("%d", zaehler);
@@ -42,7 +42,7 @@ void nullBisNeun() {
         zaehler++;
     }
 
-    puts("\nRückwärts mit while-Schleife:");
+    puts("\nRückw\x84rts mit while-Schleife:");
     zaehler = 10;
     while (zaehler--) {
         printf("%d", zaehler);
@@ -60,7 +60,7 @@ void nullBisNeun() {
 void aBisZ() {
     clearScreen();
     puts("Buchstaben a-z:");
-    puts("Vorwärts mit for-Schleife:");
+    puts("Vorw\x84rts mit for-Schleife:");
     for (int i = 97; i < 123; i++){
         printf("%c", i);
         if (i != 122) {
@@ -69,7 +69,7 @@ void aBisZ() {
             puts("");
         }
     }
-    puts("\nRückwärts mit for-Schleife:");
+    puts("\nRückw\x84rts mit for-Schleife:");
     for (int i = 122; i >= 97; i--) {
         printf("%c", i);
         if (i != 97) {
@@ -78,7 +78,7 @@ void aBisZ() {
             puts("");
         }
     }
-    puts("\nVorwärts mit while-Schleife:");
+    puts("\nVorw\x84rts mit while-Schleife:");
     int zaehler = 97;
     while (zaehler < 123){
         printf("%c", zaehler);
@@ -91,7 +91,7 @@ void aBisZ() {
         zaehler++;
     }
 
-    puts("\nRückwärts mit while-Schleife:");
+    puts("\nRückw\x84rts mit while-Schleife:");
     zaehler = 122;
     while (zaehler > 96) {
         printf("%c", zaehler);

@@ -82,7 +82,7 @@ void sortierVerfahrenMenue() {
         puts("Aufgaben zu Sortierverfahren:");
         puts("1: Zahlenwerte der for x Schleife");
         puts("2: 10 Werte sortiert");
-        puts("2: Wörter sortieren");
+        puts("2: W\x94rter sortieren");
 
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");

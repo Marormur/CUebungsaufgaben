@@ -55,9 +55,9 @@ int a_teiltextInTextSuchen() {
     fgets(a_zeichenfolge, a_maxLaengeZeichenfolge, stdin);
 
     if (strstr(a_text, a_zeichenfolge)) {
-        printf("Der eingegebene Text enthält die Zeichenfolge '%s'.\n", a_zeichenfolge);
+        printf("Der eingegebene Text enth\x84lt die Zeichenfolge '%s'.\n", a_zeichenfolge);
     } else {
-        printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", a_zeichenfolge);
+        printf("Der eingegebene Text enth\x84lt die Zeichenfolge '%s' nicht.\n", a_zeichenfolge);
     }
 
     return (0);
@@ -151,9 +151,9 @@ int b_teiltextInTextSuchen() {
     fgets(zeichenfolge, sizeof(zeichenfolge) / sizeof(zeichenfolge[0]), stdin);
 
     if (strstr(a_text, a_zeichenfolge)) {
-        printf("Der eingegebene Text enthält die Zeichenfolge '%s'.\n", zeichenfolge);
+        printf("Der eingegebene Text enth\x84lt die Zeichenfolge '%s'.\n", zeichenfolge);
     } else {
-        printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
+        printf("Der eingegebene Text enth\x84lt die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
 
     return (0);
@@ -276,9 +276,9 @@ int c_teiltextInTextSuchenWrapper() {
     fputs(enthalten ? "Rückgabewert: true\n" : "Rückgabewert: flase\n", stdout);
 
     if (enthalten) {
-        printf("Der eingegebene Text enthält die Zeichenfolge '%s'.\n", zeichenfolge);
+        printf("Der eingegebene Text enth\x84lt die Zeichenfolge '%s'.\n", zeichenfolge);
     } else {
-        printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
+        printf("Der eingegebene Text enth\x84lt die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
 
     return (0);
@@ -340,7 +340,7 @@ void funktionenMenue() {
         puts("Aufgaben zu Funktionen:");
         puts("1: Funktionen erhalten / liefern keine Werte, alle Variablen global");
         puts("2: Funktionen erhalten / liefern keine Werte, alle Variablen lokal");
-        puts("3: Alle Funktionen erhalten alle Werte, die sie benötigen & liefern Werte zurück");
+        puts("3: Alle Funktionen erhalten alle Werte, die sie ben\x94tigen & liefern Werte zurück");
         puts("4: ");
 
         puts("0: Zurück zum Hauptmenü");

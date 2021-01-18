@@ -178,7 +178,7 @@ void benutzereingabe() {
     }
 
     if (eingabe[0] == 1 && eingabe[4] != 1) {
-        puts("\nUngültige Eingabe! Eine Zahl, die mit 1 anfängt, muss auch mit 1 enden.");
+        puts("\nUngültige Eingabe! Eine Zahl, die mit 1 anf\x84ngt, muss auch mit 1 enden.");
         pressAnyKeyMessage();
         return;
     }

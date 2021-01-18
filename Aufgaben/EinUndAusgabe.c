@@ -42,7 +42,7 @@ void halloWeltAufgabe() {
     printf("Das Ergebnis der Multiplikation lautet: %d\n", zahl1 * zahl2);
     printf("Das Ergebnis der Division lautet      : %f\n\n", (float) zahl1 / (float) zahl2);
 
-    puts("Schöner sind die Ausgaben so:");
+    puts("Sch\x94ner sind die Ausgaben so:");
     printf("Das Ergebnis von 100 + 120 = %d\n", zahl2 + zahl1);
     printf("Das Ergebnis von 120 - 100 = %d\n", zahl1 - zahl2);
     printf("Das Ergebnis von 100 * 120 = %d\n", zahl2 * zahl1);
@@ -62,7 +62,7 @@ void spareinlageAufgabe() {
     double zinssatz = strtod(getString(256), NULL);
 
     // Mit ".2" vor dem "lf" kann man in einem formatierten String die Nachkommastellen eines doubles (oder auch float) auf 2 Stellen begrenzen
-    printf("\nDas Endkapital nach 3 Jahren beläuft sich auf %.2lf\n\n", startkapital * pow(1 + zinssatz / 100, 3));
+    printf("\nDas Endkapital nach 3 Jahren bel\x84uft sich auf %.2lf\n\n", startkapital * pow(1 + zinssatz / 100, 3));
     pressAnyKeyMessage();
 }
 
