@@ -3,4 +3,4 @@ project(CUebungsaufgaben C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(CUebungsaufgaben main.c Aufgaben/EinUndAusgabe.c Aufgaben/EinUndAusgabe.h AllgemeineFunktionen.c AllgemeineFunktionen.h Aufgaben/Alternativen.c Aufgaben/Alternativen.h Aufgaben/Schleifen.c Aufgaben/Schleifen.h Aufgaben/SchleifenUndAlternativen.c Aufgaben/SchleifenUndAlternativen.h Aufgaben/Arrays.c Aufgaben/Arrays.h Aufgaben/Sortierverfahren.c Aufgaben/Sortierverfahren.h Aufgaben/Structs.c Aufgaben/Structs.h Aufgaben/Funktionen.c Aufgaben/Funktionen.h)
+add_executable(CUebungsaufgaben "src/main.c" "src/Aufgaben/EinUndAusgabe.c" "src/Aufgaben/EinUndAusgabe.h" "src/AllgemeineFunktionen.c" "src/AllgemeineFunktionen.h" "src/Aufgaben/Alternativen.c" "src/Aufgaben/Alternativen.h" "src/Aufgaben/Schleifen.c" "src/Aufgaben/Schleifen.h" "src/Aufgaben/SchleifenUndAlternativen.c" "src/Aufgaben/SchleifenUndAlternativen.h" "src/Aufgaben/Arrays.c" "src/Aufgaben/Arrays.h" "src/Aufgaben/Sortierverfahren.c" "src/Aufgaben/Sortierverfahren.h" "src/Aufgaben/Structs.c" "src/Aufgaben/Structs.h" "src/Aufgaben/Funktionen.c" "src/Aufgaben/Funktionen.h" "src/Umlaute.c" "src/Umlaute.h")
