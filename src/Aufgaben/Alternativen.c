@@ -59,7 +59,7 @@ void notenLookup() {
             printf("\nMangelhaft\n\n");
             break;
         case 6:
-            printf("\nUngen\x81 \bgend\n\n");
+            printf("\nUngenügend\n\n");
             break;
         default:
             printf("\nDie Eingabe stellt keine Note dar!\n\n");
@@ -73,8 +73,8 @@ void notenLookup() {
 void menue() {
     clearScreen();
     puts("(1) Daten laden");
-    puts("(2) Daten erg\x84nzen");
-    puts("(3) Daten l\x94schen");
+    puts("(2) Daten ergänzen");
+    puts("(3) Daten löschen");
     puts("(4) Daten auswerten");
     puts("(5) Daten speichern");
     puts("(0) ENDE");
@@ -82,25 +82,25 @@ void menue() {
     long input = strtol(getString(256), NULL, 10);
     switch (input) {
         case 1:
-            printf("\nSie haben \"Daten laden\" gew\x84hlt.\n");
+            printf("\nSie haben \"Daten laden\" gewählt.\n");
             break;
         case 2:
-            printf("\nSie haben \"Daten erg\x84nzen\" gew\x84hlt.\n");
+            printf("\nSie haben \"Daten ergänzen\" gewählt.\n");
             break;
         case 3:
-            printf("\nSie haben \"Daten l\x94schen\" gew\x84hlt.\n");
+            printf("\nSie haben \"Daten löschen\" gewählt.\n");
             break;
         case 4:
-            printf("\nSie haben \"Daten auswerten\" gew\x84hlt.\n");
+            printf("\nSie haben \"Daten auswerten\" gewählt.\n");
             break;
         case 5:
-            printf("\nSie haben \"Daten speichern\" gew\x84hlt.\n");
+            printf("\nSie haben \"Daten speichern\" gewählt.\n");
             break;
         case 0:
-            printf("\nSie haben \"ENDE\" gew\x84hlt.\n");
+            printf("\nSie haben \"ENDE\" gewählt.\n");
             break;
         default:
-            printf("\nUng\x81 \bltige Eingabe!\n");
+            printf("\nUngültige Eingabe!\n");
             break;
     }
 
@@ -198,12 +198,12 @@ void alternativenMenue() {
     while (1) {
         clearScreen();
         puts("Aufgaben zu Alternativen:");
-        puts("1: Begr\x81 \bßung");
+        puts("1: Begrüßung");
         puts("2: Schulnoten");
         puts("3: Menü");
         puts("4: Drei Zahlen");
         puts("5: Datum");
-        puts("0: Zur\x81 \bck zum Hauptmen\x81");
+        puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {

@@ -158,31 +158,31 @@ void benutzereingabe() {
     char* eingabe = copyString(getString(256));
     long eingabeZahl = strtol(eingabe, NULL, 10);
     if (eingabeZahl >= 100000 || eingabeZahl <=9999) {
-        puts("\nUng\x81 \bltige Eingabe! Die Zahl muss 5stellig sein.");
+        puts("\nUngültige Eingabe! Die Zahl muss 5stellig sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if(eingabeZahl % 3 == 0) {
-        puts("\nUng\x81 \bltige Eingabe! Die Zahl darf nicht durch 3 teilbar sein.");
+        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 3 teilbar sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if(eingabeZahl % 5 == 0) {
-        puts("\nUng\x81 \bltige Eingabe! Die Zahl darf nicht durch 5 teilbar sein.");
+        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 5 teilbar sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if(eingabeZahl % 7 == 0) {
-        puts("\nUng\x81 \bltige Eingabe! Die Zahl darf nicht durch 7 teilbar sein.");
+        puts("\nUngültige Eingabe! Die Zahl darf nicht durch 7 teilbar sein.");
         pressAnyKeyMessage();
         return;
     }
 
     if (eingabe[0] == 1 && eingabe[4] != 1) {
-        puts("\nUng\x81 \bltige Eingabe! Eine Zahl, die mit 1 anf\x84ngt, muss auch mit 1 enden.");
+        puts("\nUngültige Eingabe! Eine Zahl, die mit 1 anfängt, muss auch mit 1 enden.");
         pressAnyKeyMessage();
         return;
     }
@@ -194,7 +194,7 @@ void benutzereingabe() {
     }
 
     if (summeDerErstenZiffern % 7 != eingabe[4] - '0') {
-        puts("\nUng\x81 \bltige Eingabe! Die 5. Ziffer ist nicht der Rest der Division der Summe der ersten Ziffern durch 7.");
+        puts("\nUngültige Eingabe! Die 5. Ziffer ist nicht der Rest der Division der Summe der ersten Ziffern durch 7.");
         pressAnyKeyMessage();
         return;
     }
@@ -213,7 +213,7 @@ void schleifenUndAlternativenMenue() {
         puts("3: Zahleneingabe"); // Zahlen, Zahlen, Zahlen; hier wurde ich richtig kreativ mit den Namen
         puts("4: Passwort");
         puts("5: Benutzereingabe");
-        puts("0: Zur\x81 \bck zum Hauptmen\x81");
+        puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {

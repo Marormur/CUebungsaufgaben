@@ -13,10 +13,15 @@
 #include "Aufgaben/Funktionen.h"
 
 int main() {
+    // Aktiviere UTF-8 für die Windows CMD, damit man einfach Umlaute in Strings verwenden kann
+#if defined (_WIN32)
+    system("CHCP 65001");
+#endif
+    
     int exitProgram = 0;
     while (!exitProgram) {
         clearScreen();
-        puts("==== L\x94sungen zu den C \x9A \bbungsaufgaben ====");
+        puts("==== Lösungen zu den C Übungsaufgaben ====");
         puts("1: Ein- und Ausgabe");
         puts("2: Alternativen");
         puts("3: Schleifen");

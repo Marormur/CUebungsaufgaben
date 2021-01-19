@@ -8,7 +8,7 @@
 
 void pressAnyKeyMessage() {
     fflush(stdin);
-    puts("Dr\x81 \bcke eine beliebige Taste zum Fortfahren...");
+    puts("Drücke eine beliebige Taste zum Fortfahren...");
     fgetc(stdin);
 }
 

@@ -244,7 +244,7 @@ void arraysMenue() {
         puts("9: Summen");
         puts("10: Verfahren von Sarus");
 
-        puts("0: Zur\x81 \bck zum Hauptmen\x81");
+        puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {

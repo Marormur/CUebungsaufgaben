@@ -11,7 +11,7 @@
 void nullBisNeun() {
     clearScreen();
     puts("Zahlen 0-9:");
-    puts("Vorw\x84rts mit for-Schleife:");
+    puts("Vorwärts mit for-Schleife:");
     int i;
     for (i = 0; i < 10; i++){
         printf("%d", i);
@@ -21,7 +21,7 @@ void nullBisNeun() {
             puts("");
         }
     }
-    puts("\nR\x81 \bckw\x84rts mit for-Schleife:");
+    puts("\nRückwärts mit for-Schleife:");
     for (i = 9; i >= 0; i--) {
         printf("%d", i);
         if (i != 0) {
@@ -30,7 +30,7 @@ void nullBisNeun() {
             puts("");
         }
     }
-    puts("\nVorw\x84rts mit while-Schleife:");
+    puts("\nVorwärts mit while-Schleife:");
     int zaehler = 0;
     while (zaehler < 10){
         printf("%d", zaehler);
@@ -43,7 +43,7 @@ void nullBisNeun() {
         zaehler++;
     }
 
-    puts("\nR\x81 \bckw\x84rts mit while-Schleife:");
+    puts("\nRückwärts mit while-Schleife:");
     zaehler = 10;
     while (zaehler--) {
         printf("%d", zaehler);
@@ -61,7 +61,7 @@ void nullBisNeun() {
 void aBisZ() {
     clearScreen();
     puts("Buchstaben a-z:");
-    puts("Vorw\x84rts mit for-Schleife:");
+    puts("Vorwärts mit for-Schleife:");
     int i;
     for (i = 97; i < 123; i++){
         printf("%c", i);
@@ -71,7 +71,7 @@ void aBisZ() {
             puts("");
         }
     }
-    puts("\nR\x81 \bckw\x84rts mit for-Schleife:");
+    puts("\nRückwärts mit for-Schleife:");
     for (i = 122; i >= 97; i--) {
         printf("%c", i);
         if (i != 97) {
@@ -80,7 +80,7 @@ void aBisZ() {
             puts("");
         }
     }
-    puts("\nVorw\x84rts mit while-Schleife:");
+    puts("\nVorwärts mit while-Schleife:");
     int zaehler = 97;
     while (zaehler < 123){
         printf("%c", zaehler);
@@ -93,7 +93,7 @@ void aBisZ() {
         zaehler++;
     }
 
-    puts("\nR\x81 \bckw\x84rts mit while-Schleife:");
+    puts("\nRückwärts mit while-Schleife:");
     zaehler = 122;
     while (zaehler > 96) {
         printf("%c", zaehler);
@@ -199,7 +199,7 @@ void schleifenMenue() {
         puts("4: Zahlenkette");
         puts("5: Kleines 1*1");
         puts("6: Zahlenpyramide");
-        puts("0: Zur\x81 \bck zum Hauptmen\x81");
+        puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
         int input = (int)strtol(getString(2), NULL, 10);
         switch (input) {
