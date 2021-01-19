@@ -91,12 +91,16 @@ void a_menue() {
                 return;
             case 1:
                 a_addition();
+                break;
             case 2:
                 a_dateiAnlegen();
+                break;
             case 3:
                 a_teiltextInTextSuchen();
+                break;
             case 4:
                 a_multiplikation();
+                break;
             default:
                 // Nur zur Unterdrückung einer Warnung
                 break;
@@ -140,22 +144,24 @@ int b_dateiAnlegen() {
     return (0);
 }
 
-// FIXME: Es wird nicht auf die erste Eingabe gewartet
 int b_teiltextInTextSuchen() {
-    char zeichenfolge[128], text[1024];
-
+    int zeichenfolgeLaenge = 128, textLaenge = 1024;
+    char* text = malloc(textLaenge);
+    char* zeichenfolge = malloc(zeichenfolgeLaenge);
     printf("Bitte geben Sie den zu durchsuchenden Text ein: ");
-    fgets(text, sizeof(text) / sizeof(text[0]), stdin);
-
+    text = getString(textLaenge);
+    
     printf("Bitte geben Sie die zu suchende Zeichenfolge ein: ");
-    fgets(zeichenfolge, sizeof(zeichenfolge) / sizeof(zeichenfolge[0]), stdin);
-
+    zeichenfolge = getString(zeichenfolgeLaenge);
+    
     if (strstr(a_text, a_zeichenfolge)) {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s'.\n", zeichenfolge);
     } else {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
 
+    free(text);
+    free(zeichenfolge);
     return (0);
 }
 
@@ -189,12 +195,16 @@ void b_menue() {
                 return;
             case 1:
                 b_addition();
+                break;
             case 2:
                 b_dateiAnlegen();
+                break;
             case 3:
                 b_teiltextInTextSuchen();
+                break;
             case 4:
                 b_multiplikation();
+                break;
             default:
                 // Nur zur Unterdrückung einer Warnung
                 break;
@@ -261,16 +271,17 @@ bool c_teiltextInTextSuchen(char text[1024], char zeichenfolge[128]) {
     return strstr(text, zeichenfolge);
 }
 
-// FIXME: Es wird nicht auf die erste Eingabe gewartet
 int c_teiltextInTextSuchenWrapper() {
-    char zeichenfolge[128], text[1024];
+    int zeichenfolgeLaenge = 128, textLaenge = 1024;
+    char* zeichenfolge = malloc(zeichenfolgeLaenge);
+    char* text= malloc(textLaenge);
     bool enthalten;
 
     printf("Bitte geben Sie den zu durchsuchenden Text ein: ");
-    fgets(text, sizeof(text) / sizeof(text[0]), stdin);
+    text = getString(textLaenge);
 
     printf("Bitte geben Sie die zu suchende Zeichenfolge ein: ");
-    fgets(zeichenfolge, sizeof(zeichenfolge) / sizeof(zeichenfolge[0]), stdin);
+    zeichenfolge = getString(zeichenfolgeLaenge);
 
     enthalten = c_teiltextInTextSuchen(text, zeichenfolge);
     fputs(enthalten ? "Rückgabewert: true\n" : "Rückgabewert: flase\n", stdout);
@@ -281,6 +292,8 @@ int c_teiltextInTextSuchenWrapper() {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
 
+    free(zeichenfolge);
+    free(text);
     return (0);
 }
 
@@ -321,12 +334,16 @@ void c_menue() {
                 return;
             case 1:
                 c_additionWrapper();
+                break;
             case 2:
                 c_dateiAnlegenWrapper();
+                break;
             case 3:
                 c_teiltextInTextSuchenWrapper();
+                break;
             case 4:
                 c_multiplikationWrapper();
+                break;
             default:
                 // Nur zur Unterdrückung einer Warnung
                 break;
@@ -351,10 +368,13 @@ void funktionenMenue() {
                 return;
             case 1:
                 a_menue();
+                break;
             case 2:
                 b_menue();
+                break;
             case 3:
                 c_menue();
+                break;
             case 4:
                 break;
             default:
