@@ -25,7 +25,7 @@ int a_addition() {
     scanf("%d", &a_zahl2);
     a_ergebnis = a_zahl1 + a_zahl2;
     printf("Das ergebnis ist: %d \n\n", a_ergebnis);
-
+    pressAnyKeyMessage();
     return (0);
 }
 
@@ -42,7 +42,7 @@ int a_dateiAnlegen() {
 
     printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", a_dateiname,
            strlen(a_dateiname));
-
+    pressAnyKeyMessage();
     return (0);
 }
 
@@ -60,6 +60,7 @@ int a_teiltextInTextSuchen() {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", a_zeichenfolge);
     }
 
+    pressAnyKeyMessage();
     return (0);
 }
 
@@ -70,7 +71,7 @@ int a_multiplikation() {
     scanf("%d", &a_zahl2M);
     a_ergebnisM = a_zahl1M * a_zahl2M;
     printf("Das ergebnis ist: %d \n\n", a_ergebnisM);
-
+    pressAnyKeyMessage();
     return (0);
 }
 
@@ -120,7 +121,7 @@ int b_addition() {
     scanf("%d", &zahl2);
     ergebnis = zahl1 + zahl2;
     printf("Das ergebnis ist: %d \n\n", ergebnis);
-
+    pressAnyKeyMessage();
     return (0);
 }
 
@@ -140,7 +141,7 @@ int b_dateiAnlegen() {
 
     printf("Die Datei mit dem Namen '%s' wurde angelegt. \nDer Name ist %lu Zeichen lang\n", dateiname,
            strlen(dateiname));
-
+    pressAnyKeyMessage();
     return (0);
 }
 
@@ -160,6 +161,7 @@ int b_teiltextInTextSuchen() {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
 
+    pressAnyKeyMessage();
     free(text);
     free(zeichenfolge);
     return (0);
@@ -174,7 +176,7 @@ int b_multiplikation() {
     scanf("%d", &zahl2);
     ergebnis = zahl1 * zahl2;
     printf("Das ergebnis ist: %d \n\n", ergebnis);
-
+    pressAnyKeyMessage();
     return (0);
 }
 
@@ -231,6 +233,7 @@ int c_additionWrapper() {
     printf("Rückgabewert: %d\n", ergebnis);
 
     printf("Das ergebnis ist: %d \n\n", ergebnis);
+    pressAnyKeyMessage();
 
     return (0);
 }
@@ -248,6 +251,7 @@ int c_dateiAnlegen(char wunschname[32]) {
     fclose(datei);
 
     printf("Die Datei mit dem Namen '%s' wurde angelegt. \n", dateiname);
+    pressAnyKeyMessage();
 
     return strlen(dateiname);
 }
@@ -263,6 +267,7 @@ int c_dateiAnlegenWrapper() {
     printf("Rückgabewert: %d\n", laengeGesamtname);
 
     printf("Der Name ist %d Zeichen lang\n", laengeGesamtname);
+    pressAnyKeyMessage();
 
     return (0);
 }
@@ -292,6 +297,7 @@ int c_teiltextInTextSuchenWrapper() {
         printf("Der eingegebene Text enthält die Zeichenfolge '%s' nicht.\n", zeichenfolge);
     }
 
+    pressAnyKeyMessage();
     free(zeichenfolge);
     free(text);
     return (0);
@@ -314,6 +320,7 @@ int c_multiplikationWrapper() {
 
     printf("Das ergebnis ist: %d \n\n", ergebnis);
 
+    pressAnyKeyMessage();
     return (0);
 }
 

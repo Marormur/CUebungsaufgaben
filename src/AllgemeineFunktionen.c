@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <string.h>
 
+/// <summary>
+/// Hält die Konsole so lange an, bis der Nutzer eine Taste drückt.
+/// </summary>
 void pressAnyKeyMessage() {
     fflush(stdin);
     puts("Drücke eine beliebige Taste zum Fortfahren...");
