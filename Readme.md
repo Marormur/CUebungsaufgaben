@@ -1,5 +1,8 @@
 # C Übungsaufgaben
-Dies ist ein Programm, welches Lösungen für die Übungsaufgaben von Herrn Mark beinhaltet.
+Dies ist ein Programm, welches Lösungen für die Übungsaufgaben von Herrn Mark beinhaltet.  
+
+
+![CMake](https://github.com/Marormur/CUebungsaufgaben/workflows/CMake/badge.svg)
 
 ## Fortschritt
 - [x] **Ein- und Ausgabebefehle**
