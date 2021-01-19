@@ -11,4 +11,6 @@ void pressAnyKeyMessage();
 
 char* getString(int length);
 
+char* copyString(char* sourceString);
+
 #endif //CUEBUNGSAUFGABEN_ALLGEMEINEFUNKTIONEN_H

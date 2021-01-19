@@ -155,8 +155,7 @@ void passwort() {
 void benutzereingabe() {
     clearScreen();
     printf("Bitte geben Sie eine 5 stellige Zahl ein: ");
-    char eingabe[256];
-    strcpy_s(eingabe, sizeof(eingabe), getString(256));
+    char* eingabe = copyString(getString(256));
     long eingabeZahl = strtol(eingabe, NULL, 10);
     if (eingabeZahl >= 100000 || eingabeZahl <=9999) {
         puts("\nUng\x81 \bltige Eingabe! Die Zahl muss 5stellig sein.");
@@ -200,6 +199,7 @@ void benutzereingabe() {
         return;
     }
 
+    free(eingabe);
     puts("Eingabe korrekt!");
     pressAnyKeyMessage();
 }

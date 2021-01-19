@@ -6,6 +6,17 @@
 #include <stdio.h>
 #include <string.h>
 
+void pressAnyKeyMessage() {
+    fflush(stdin);
+    puts("Dr\x81 \bcke eine beliebige Taste zum Fortfahren...");
+    fgetc(stdin);
+}
+
+// Diese Funktionen sind für die Verwendung unter Windows und macOS angepasst
+#pragma region CrossplatformFunktionen
+/// <summary>
+/// Leert die Konsole.
+/// </summary>
 void clearScreen() {
 #if defined(_WIN32)
     system("cls");
@@ -14,25 +25,44 @@ void clearScreen() {
 #endif
 }
 
-void pressAnyKeyMessage() {
-    fflush(stdin);
-    puts("DrÃ¼cke eine beliebige Taste zum Fortfahren...");
-    fgetc(stdin);
-}
-
-char*  getString(int length){
+/// <summary>
+/// Ermöglicht die Eingabe eines Strings durch den Nutzer.
+/// </summary>
+/// <param name="length">Länge des Strings, der gelesen werden soll.</param>
+/// <returns>Eingabe des Nutzers</returns>
+char*  getString(int length) {
     char *input = malloc(length);
 
-    // TODO: Obwohl ich hier mit das Problem umgehe, dass ein "\n", welches stdin manchmal hÃ¤ngen bleibt, meine Eingaben Ã¼berspringt
-    // Scheint das nicht in jedem Compiler zu funktionieren
+    // TODO: hier sollte wieder Fehlerbehandlung rein, erstmal geht Windows
+#if defined (_WIN32)
+    return _strdup(gets_s(input, length));
+#else // Dies hier müsste noch unter macOS funktionieren
     fflush(stdin);
     if (fgets(input, length, stdin) == NULL) {
         puts("Fehler mit der Eingabe!");
-        puts("DrÃ¼cke eine beliebige Taste zum Fortfahren...");
+        puts("Drücke eine beliebige Taste zum Fortfahren...");
         fflush(stdin);
         fgetc(stdin);
         return NULL;
     }
 
     return strdup(input);
+#endif
 }
+
+/// <summary>
+/// Kopiert einen String in einen anderen.
+/// </summary>
+/// <param name="sourceString"></param>
+/// <returns></returns>
+char* copyString(char* sourceString) {
+    char* ausgabeString = malloc(sizeof(sourceString));
+#if defined (_WIN32) // Für Windows kann die sichere Variante verwendet werden
+    strcpy_s(ausgabeString, sizeof(sourceString), sourceString);
+    return _strdup(ausgabeString);
+#else
+    strcpy(ausgabeString, sourceString);
+    return strdup(ausgabeString);
+#endif
+}
+#pragma endregion
