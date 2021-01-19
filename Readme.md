@@ -2,7 +2,7 @@
 Dies ist ein Programm, welches Lösungen für die Übungsaufgaben von Herrn Mark beinhaltet.  
 
 
-![CMake](https://github.com/Marormur/CUebungsaufgaben/workflows/CMake/badge.svg?event=psuh)
+![CMake](https://github.com/Marormur/CUebungsaufgaben/workflows/CMake/badge.svg?event=push)
 
 ## Fortschritt
 - [x] **Ein- und Ausgabebefehle**
