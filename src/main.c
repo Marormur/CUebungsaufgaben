@@ -11,6 +11,7 @@
 #include "Aufgaben/Sortierverfahren.h"
 #include "Aufgaben/Structs.h"
 #include "Aufgaben/Funktionen.h"
+#include "Aufgaben/Pointer.h"
 
 int main() {
     // Aktiviere UTF-8 für die Windows CMD, damit man einfach Umlaute in Strings verwenden kann
@@ -30,6 +31,7 @@ int main() {
         puts("6: Sortierverfahren");
         puts("7: Structs");
         puts("8: Funktionen");
+        puts("9: Pointer");
         puts("0: Programm beenden");
         printf("Treffe eine Auswahl: ");
 
@@ -63,6 +65,9 @@ int main() {
                 break;
             case 8:
                 funktionenMenue();
+                break;
+            case 9:
+                pointerMenue();
                 break;
             default:
                 // Unbehandelt, da man im Menü bleiben soll

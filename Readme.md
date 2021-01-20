@@ -41,3 +41,4 @@ Dies ist ein Programm, welches Lösungen für die Übungsaufgaben von Herrn Mark
     - [ ] Aufgabe 3
     - [ ] Aufgabe 4
 - [x] **Funktionen**
+- [ ] **Pointer**
