@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include "Alternativen.h"
 
 // Aufgabe 1
 void begruessung() {
@@ -16,12 +17,12 @@ void begruessung() {
     printf("Bitte geben Sie Ihr Geschlecht (m/w) ein: ");
 
     // Hier muss ich 2 Zeichen abfragen, da sonst "\n" genommen wird
-    char geschlecht = getString(2)[0]; // Index 0, weil ich kein Interesse an "\n" habe
-    if (geschlecht > 96) { // Wenn ein kleiner Buchstabe eingegeben wurde
-        geschlecht -= 32; // Dann soll daraus ein großer gemacht werden
+    char* geschlechtInput = getString(2);
+    if (geschlechtInput[0] > 96) { // Wenn ein kleiner Buchstabe eingegeben wurde
+        geschlechtInput[0] -= 32; // Dann soll daraus ein großer gemacht werden
     }
 
-    switch (geschlecht) {
+    switch (geschlechtInput[0]) {
         case 'M':
             printf("\nGuten Tag, Herr %s\n", nachname);
             break;
@@ -34,6 +35,7 @@ void begruessung() {
     }
 
     free(nachname);
+    free(geschlechtInput);
     pressAnyKeyMessage();
 }
 
@@ -41,7 +43,9 @@ void begruessung() {
 void notenLookup() {
     clearScreen();
     printf("Geben Sie eine Note (1-6) ein: ");
-    long note = strtol(getString(2), NULL , 10);
+    char* input = getString(2);
+    long note = strtol(input, NULL , 10);
+    free(input);
     switch (note) {
         case 1:
             printf("\nSehr gut\n\n");
@@ -79,7 +83,9 @@ void menue() {
     puts("(5) Daten speichern");
     puts("(0) ENDE");
     printf("Ihre Eingabe: ");
-    long input = strtol(getString(256), NULL, 10);
+    char* menueInput = getString(256);
+    long input = strtol(menueInput, NULL, 10);
+    free(menueInput);
     switch (input) {
         case 1:
             printf("\nSie haben \"Daten laden\" gewählt.\n");
@@ -112,12 +118,16 @@ void dreiZahlen() {
     int zahl1, zahl2, zahl3;
     printf("1. Zahl: ");
     int groessteZahl, kleinsteZahl;
-    zahl1 = (int)strtol(getString(256), NULL, 10);
+    char* zahl1Input = getString(256);
+    zahl1 = (int)strtol(zahl1Input, NULL, 10);
+    free(zahl1Input);
     groessteZahl = zahl1;
     kleinsteZahl = zahl1;
 
     printf("\n2. Zahl: ");
-    zahl2 = (int)strtol(getString(256), NULL, 10);
+    char* zahl2Input = getString(256);
+    zahl2 = (int)strtol(zahl2Input, NULL, 10);
+    free(zahl2Input);
     if (zahl2 > zahl1) { // If-Alternative 1
         groessteZahl = zahl2;
     } else {
@@ -125,8 +135,9 @@ void dreiZahlen() {
     }
 
     printf("\n3. Zahl: ");
-    zahl3 = (int)strtol(getString(256), NULL, 10);
-
+    char* zahl3Input = getString(256);
+    zahl3 = (int)strtol(zahl3Input, NULL, 10);
+    free(zahl3Input);
     if (zahl3 > groessteZahl) {
         groessteZahl = zahl3;
     } else if (zahl3 < kleinsteZahl) {
@@ -142,11 +153,17 @@ void datum() {
     clearScreen();
     int jahr,monat,tag;
     printf("Bitte geben Sie das Jahr ein : ");
-    jahr = (int)strtol(getString(5), NULL, 10);
+    char* jahrInput = getString(5);
+    jahr = (int)strtol(jahrInput, NULL, 10);
+    free(jahrInput);
     printf("\nBitte geben Sie den Monat ein: ");
-    monat = (int)strtol(getString(3), NULL, 10);
+    char* monatInput = getString(3);
+    monat = (int)strtol(monatInput, NULL, 10);
+    free(monatInput);
     printf("\nBitte geben Sie den Tag ein  :");
-    tag = (int)strtol(getString(3), NULL, 10);
+    char* tagInput = getString(3);
+    tag = (int)strtol(tagInput, NULL, 10);
+    free(tagInput);
     int gueltigesDatum = 1;
     time_t zeit;
     time(&zeit);
@@ -205,7 +222,9 @@ void alternativenMenue() {
         puts("5: Datum");
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
-        int input = (int)strtol(getString(2), NULL, 10);
+        char* menueInput = getString(2);
+        int input = (int)strtol(menueInput, NULL, 10);
+        free(menueInput);
         switch (input) {
             case 0:
                 return;

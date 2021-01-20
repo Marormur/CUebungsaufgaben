@@ -65,7 +65,9 @@ void einsBisZehnMultiplikation() {
 void zweierPotenz() {
     clearScreen();
     printf("Welche 2er-Potenz wollen Sie sich anzeigen lassen? 2 hoch ");
-    int eingabe = (int)strtol(getString(3), NULL, 10);
+    char* inputString = getString(3);
+    int eingabe = (int)strtol(inputString, NULL, 10);
+    free(inputString);
     int potenzen[] = {1,2,4,8,16,32,64,128,256,512,1024};
     if (eingabe < 0 || eingabe > (sizeof(potenzen) / sizeof(*potenzen))) {
         printf("Die Eingabe muss zwischen 0 und 10 sein!\n\n");
@@ -105,27 +107,30 @@ void buchstabenanzahl() {
     clearScreen();
     printf("Geben Sie ein Wort ein: ");
     char wortEingabe[1024];
-    strcpy(wortEingabe, getString(sizeof(wortEingabe) / sizeof(wortEingabe[0])));
+    char* eingabeString = getString(sizeof(wortEingabe) / sizeof(wortEingabe[0]));
+    strcpy(wortEingabe, eingabeString);
+    free(eingabeString);
     printf("Geben Sie einen Buchstaben ein: ");
-    char buchstabe = *getString(2);
+    char* buchstabeInput = getString(2);
     int buchstabenGefunden = 0;
-    char buchstabeZumArbeiten = buchstabe;
 
     // Wenn es sich um einen kleinen Buchstaben handelt, soll dieser groß gemacht werden
-    if (buchstabeZumArbeiten > 96) {
-        buchstabeZumArbeiten = (char)(buchstabeZumArbeiten-32);
+    if (*buchstabeInput > 96) {
+        *buchstabeInput = (char)(*buchstabeInput -32);
     }
 
     int i;
     for (i = 0; i < strlen(wortEingabe); ++i) {
 
         // Groß- und Kleinschreibung ist bei mir egal, also prüfe ich auf beides
-        if (wortEingabe[i] == buchstabeZumArbeiten || (char)(wortEingabe[i] - 32) == buchstabeZumArbeiten) {
+        if (wortEingabe[i] == *buchstabeInput || (char)(wortEingabe[i] - 32) == *buchstabeInput) {
             buchstabenGefunden++;
         }
     }
 
-    printf("\n\"%c\" ist %d mal in dem Wort enthalten.\n\n", buchstabe, buchstabenGefunden);
+    printf("\n\"%c\" ist %d mal in dem Wort enthalten.\n\n", *buchstabeInput, buchstabenGefunden);
+    free(wortEingabe);
+    free(buchstabeInput);
     pressAnyKeyMessage();
 }
 
@@ -159,7 +164,9 @@ void summen() {
     int i;
     for (i = 0; i < 9; i-=-1) {
         printf("Geben Sie Wert %d ein: ", i+1);
-        int input = (int)strtol(getString(32), NULL, 10);
+        char* inputString = getString(32);
+        int input = (int)strtol(inputString, NULL, 10);
+        free(inputString);
         switch (i) {
             case 0:
             zahlen[1][1] = input;
@@ -246,7 +253,9 @@ void arraysMenue() {
 
         puts("0: Zurück zum Hauptmenü");
         printf("\nTreffe eine Auswahl: ");
-        int input = (int)strtol(getString(2), NULL, 10);
+        char* inputString = getString(2);
+        int input = (int)strtol(inputString, NULL, 10);
+        free(inputString);
         switch (input) {
             case 0:
                 return;

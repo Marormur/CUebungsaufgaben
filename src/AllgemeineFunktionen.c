@@ -29,7 +29,7 @@ void clearScreen() {
 }
 
 /// <summary>
-/// Ermöglicht die Eingabe eines Strings durch den Nutzer.
+/// Ermöglicht die Eingabe eines Strings durch den Nutzer. Der enstehende String sollte später an free() übergeben werden.
 /// </summary>
 /// <param name="length">Länge des Strings, der gelesen werden soll.</param>
 /// <returns>Eingabe des Nutzers</returns>
@@ -54,7 +54,7 @@ char*  getString(int length) {
 }
 
 /// <summary>
-/// Kopiert einen String in einen anderen.
+/// Kopiert einen String in einen anderen. Der enstehende String sollte später an free() übergeben werden.
 /// </summary>
 /// <param name="sourceString"></param>
 /// <returns></returns>
