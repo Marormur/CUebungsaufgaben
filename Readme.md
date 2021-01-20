@@ -40,9 +40,4 @@ Dies ist ein Programm, welches Lösungen für die Übungsaufgaben von Herrn Mark
     - [ ] Aufgabe 2
     - [ ] Aufgabe 3
     - [ ] Aufgabe 4
-- [ ] **Funktionen**
-    - [ ] Aufgabe 1 - In allen Teilaufgaben besteht ein Problem mit dem User-Input
-        - [x] a)
-        - [x] b)
-        - [x] c)
-    - [ ] Aufgabe 2
+- [x] **Funktionen**
