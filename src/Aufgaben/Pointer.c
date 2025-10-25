@@ -76,8 +76,8 @@ int mehrereUebergabeparameter() {
     // Add_Mul_4
     rechnung.zahl1 = Zahl1;
     rechnung.zahl2 = Zahl2;
-    rechnung.rechenzeichen1 = "+";
-    rechnung.rechenzeichen2 = "*";
+    rechnung.rechenzeichen1 = '+';
+    rechnung.rechenzeichen2 = '*';
 
     struct rechnungstype ergebnisRechnung = Add_Mul_4(rechnung);
     printf("Die Funktion ´Add_Mul_4´ bekommt ein Struct. Die enthaltenen Zahlen werden addiert und multipliziert. Die Rückgabe erfolgt als Struct. \n"
