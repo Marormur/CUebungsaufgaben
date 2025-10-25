@@ -31,17 +31,37 @@ jobs:
 
     - name: Configure CMake
       working-directory: ${{github.workspace}}/build
-      run: cmake .. -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      shell: bash
+      run: |
+        if [ "$RUNNER_OS" == "macOS" ]; then
+          cmake .. -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"
+        else
+          cmake .. -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        fi
 
     - name: Build
       working-directory: ${{github.workspace}}/build
-      run: cmake --build . --config ${{env.BUILD_TYPE}}
+      run: cmake --build . --config ${{env.BUILD_TYPE}} --verbose
+
+    - name: List Build Output (Debug)
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: |
+        echo "Build directory contents:"
+        ls -la
+        if [ "$RUNNER_OS" == "Windows" ]; then
+          ls -la ${{env.BUILD_TYPE}}/ || true
+        fi
 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
+      if: success()
       with:
         name: CUebungsaufgaben-${{ matrix.os }}
         path: |
           build/**/*.exe
           build/**/CUebungsaufgaben
+          build/CUebungsaufgaben
+          build/Release/CUebungsaufgaben.exe
+          build/Debug/CUebungsaufgaben.exe
         if-no-files-found: warn
