@@ -1,8 +1,16 @@
+/**
+ * @file main.c
+ * @brief Hauptprogramm für C-Übungsaufgaben
+ * 
+ * Interaktives Menüsystem zur Auswahl und Ausführung verschiedener
+ * C-Programmier-Übungen aus dem Informatikunterricht.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "AllgemeineFunktionen.h"
 
-// Die einzelnen Übungsblätter sind zur Ordnung in andere Dateien ausgelagert
+// Modulare Organisation: Jedes Thema in separaten Dateien
 #include "Aufgaben/EinUndAusgabe.h"
 #include "Aufgaben/Alternativen.h"
 #include "Aufgaben/Schleifen.h"
@@ -13,8 +21,16 @@
 #include "Aufgaben/Funktionen.h"
 #include "Aufgaben/Pointer.h"
 
+/**
+ * @brief Haupteinstiegspunkt des Programms
+ * 
+ * Zeigt ein interaktives Menü mit allen verfügbaren Übungsthemen
+ * und ermöglicht die Navigation zwischen verschiedenen Aufgabenbereichen.
+ * 
+ * @return 0 bei erfolgreicher Ausführung
+ */
 int main() {
-    // Aktiviere UTF-8 für die Windows CMD, damit man einfach Umlaute in Strings verwenden kann
+    // Aktiviere UTF-8 für Windows-Konsole (ermöglicht Umlaute)
 #if defined (_WIN32)
     system("CHCP 65001");
 #endif
@@ -35,9 +51,10 @@ int main() {
         puts("0: Programm beenden");
         printf("Treffe eine Auswahl: ");
 
-        // Der endptr kann hier auf NULL, da er immer das nächste Zeichen nach der Zahl zurück gibt
-        // In diesem Fall wäre das höchstwahrscheinlich "\n" und das brauche ich hier nicht
-        int eingabe = (int)strtol(getString(2), NULL, 10); // Da das zweite Zeichen das "\n" ist, kann ich einfach den geparsten long zu einem Integer casten, ohne Informationen zu verlieren
+        // Sichere Eingabe-Konvertierung: String -> Long -> Int
+        // endptr auf NULL gesetzt, da das Folgezeichen (\n) hier nicht relevant ist
+        int eingabe = (int)strtol(getString(2), NULL, 10);
+        
         switch (eingabe) {
             case 0:
                 exitProgram = 1;
@@ -70,8 +87,7 @@ int main() {
                 pointerMenue();
                 break;
             default:
-                // Unbehandelt, da man im Menü bleiben soll
-                // Dieser Fall dient nur zur Unterdrückung einer Warnung
+                // Ungültige Eingabe: Verbleibe im Menü
                 break;
         }
     }

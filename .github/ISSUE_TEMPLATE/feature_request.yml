@@ -1,0 +1,41 @@
+name: Feature Request
+description: Eine neue Funktion oder Verbesserung vorschlagen
+title: "[FEATURE]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Haben Sie eine Idee für eine neue Übungsaufgabe oder Verbesserung?
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung
+      description: Was möchten Sie hinzugefügt oder verbessert sehen?
+      placeholder: Beschreiben Sie Ihre Idee
+    validations:
+      required: true
+  
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Warum wäre diese Änderung hilfreich?
+      placeholder: Welches Problem löst dies oder welchen Nutzen bringt es?
+    validations:
+      required: true
+  
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativen
+      description: Haben Sie andere Lösungsansätze in Betracht gezogen?
+    validations:
+      required: false
+  
+  - type: textarea
+    id: additional
+    attributes:
+      label: Zusätzliche Informationen
+      description: Code-Beispiele, Links, etc.
